@@ -1,9 +1,19 @@
 import { config, fields, collection } from '@keystatic/core';
 
+const isProd = (typeof import.meta !== 'undefined' && import.meta.env?.PROD) || process.env.NODE_ENV === 'production';
+
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage: isProd && process.env.KEYSTATIC_MODE !== 'local'
+    ? {
+        kind: 'github',
+        repo: {
+          owner: 'tcn452',
+          name: 'redthread',
+        },
+      }
+    : {
+        kind: 'local',
+      },
   collections: {
     blog: collection({
       label: 'Blog Posts',

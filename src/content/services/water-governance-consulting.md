@@ -3,7 +3,7 @@ title: "Water Governance Consulting"
 order: 3
 tagline: "Practice 03"
 shortDescription: "Advisory, institutional transition, anti-corruption frameworks, and policy reform backed by thirty years of national and international public sector leadership."
-coverImage: "/images/group-coaching.jpg"
+coverImage: "/images/consulting-conference-1.jpg"
 ---
 
 Water is humanity's most essential common good, yet water governance is fraught with systemic vulnerabilities: institutional inertia, political interference, corruption risks, and climate unpredictability. Effective water sector transformation requires both strategic policy vision and an intimate understanding of how public bureaucracies actually operate.
@@ -37,6 +37,11 @@ Translating high-level political commitments into enforceable statutory provisio
 ## Global Experience
 
 Barbara's consulting practice bridges African local and national institutions with global multilateral platforms:
+
+![Barbara Schreiner engaging peers at an international water governance conference](/images/consulting-conference-2.jpg)
+
+*In dialogue at an international water governance convening — advisory practice across OECD, WIN, and multilateral platforms.*
+
 - **South Africa**: Drafting transformative post-apartheid water legislation, pricing strategies, and national water resource strategies.
 - **Sub-Saharan Africa**: Advisory assignments across Kenya, Uganda, Zimbabwe, Zambia, and SADC transboundary river basins.
 - **Multilateral Engagement**: Advisory roles with the OECD Water Governance Initiative, Open Government Partnership (OGP), and the Global Water Partnership.

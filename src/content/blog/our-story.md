@@ -4,7 +4,7 @@ publishedDate: "2026-03-03"
 author: "Barbara Schreiner"
 category: "reflections"
 excerpt: "How Red Thread was born at the intersection of creative writing, textile craftivism, water governance, and transformational coaching."
-coverImage: "/images/logo.jpg"
+coverImage: "/images/logo.webp"
 readTime: "4 min read"
 ---
 

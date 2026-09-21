@@ -99,8 +99,9 @@ const defaultOrgSchema = {
     />
   </head>
   <body class="min-h-full flex flex-col bg-canvas selection:bg-thread-red selection:text-white">
+    <a href="#content" class="skip-link">Skip to content</a>
     <Header />
-    <main class="flex-1">
+    <main id="content" class="flex-1">
       <slot />
     </main>
     <Footer />

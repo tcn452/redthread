@@ -8,7 +8,6 @@ const personSchema = {
   "name": "Barbara Schreiner",
   "jobTitle": "Founder & Executive Director, Red Thread NPC",
   "description": "Writer, transformational coach, textile artist, and senior water governance advisor with over 30 years of public policy leadership in South Africa and internationally.",
-  "image": `${siteUrl}/images/logo.jpg`,
   "url": new URL(Astro.url.pathname, siteUrl).toString(),
   "worksFor": {
     "@type": "NGO",
@@ -48,12 +47,18 @@ const personSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       <!-- Portrait & Quick Facts -->
       <div class="reveal lg:col-span-5 space-y-8 lg:sticky lg:top-28">
-        <div class="group aspect-[3/4] w-full overflow-hidden bg-paper-gray border border-quiet-gray/20">
+        <div class="aspect-[3/4] w-full border border-quiet-gray/20 bg-paper-gray flex flex-col justify-between p-8 sm:p-10">
           <img
-            src="/images/logo.jpg"
-            alt="Barbara Schreiner - Founder of Red Thread"
-            class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+            src="/images/logo.webp"
+            width="1024"
+            height="1024"
+            alt="Red Thread mark"
+            class="w-24 h-24 object-contain border border-quiet-gray/30 bg-canvas-pure"
           />
+          <div class="space-y-3">
+            <p class="font-display-italic text-4xl text-ink">Barbara Schreiner</p>
+            <p class="text-xs font-semibold uppercase tracking-widest text-terracotta">Founder & Executive Director</p>
+          </div>
         </div>
 
         <div class="p-6 bg-paper-gray/50 border border-quiet-gray/20 space-y-4">

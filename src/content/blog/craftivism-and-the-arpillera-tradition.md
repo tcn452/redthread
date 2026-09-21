@@ -4,7 +4,7 @@ publishedDate: "2026-03-12"
 author: "Barbara Schreiner"
 category: "craftivism"
 excerpt: "Exploring the roots of textile craftivism from Chile's arpilleristas to South African women's collectives, where stitching becomes evidence, argument, and healing."
-coverImage: "/images/women-of-gaza.jpg"
+coverImage: "/images/women-of-gaza.webp"
 readTime: "6 min read"
 ---
 

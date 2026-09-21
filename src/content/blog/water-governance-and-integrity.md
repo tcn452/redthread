@@ -4,7 +4,7 @@ publishedDate: "2026-03-15"
 author: "Barbara Schreiner"
 category: "governance"
 excerpt: "Key insights on institutional integrity, anti-corruption systems, and water tenure from decades inside public sector transitions and international leadership."
-coverImage: "/images/craftivism-workshop-1.jpg"
+coverImage: "/images/craftivism-workshop-1.webp"
 readTime: "7 min read"
 ---
 

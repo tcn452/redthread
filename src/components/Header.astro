@@ -34,7 +34,7 @@ const isActive = (path: string) => {
       <!-- Logo & Brand -->
       <a href="/" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
         <div class="w-10 h-10 sm:w-11 sm:h-11 overflow-hidden border border-quiet-gray/30 group-hover:border-thread-red shadow-2xs group-hover:scale-105 transition-all duration-300 shrink-0">
-          <img src="/images/logo.jpg" alt="Red Thread Logo" class="w-full h-full object-cover" />
+          <img src="/images/logo.webp" alt="Red Thread Logo" width="1024" height="1024" class="w-full h-full object-cover" />
         </div>
         <div class="flex flex-col min-w-0">
           <div class="flex items-baseline gap-1.5">
@@ -58,7 +58,8 @@ const isActive = (path: string) => {
             <div class="relative group/nav">
               <a
                 href={link.href}
-                class={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 flex items-center gap-1 ${
+                aria-haspopup="true"
+                class={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 flex items-center gap-1 min-h-11 ${
                   isActive(link.href)
                     ? 'text-thread-red font-semibold'
                     : 'text-ink-muted hover:text-ink'
@@ -70,7 +71,7 @@ const isActive = (path: string) => {
                   <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-thread-red"></span>
                 )}
               </a>
-              <div class="absolute left-0 top-full pt-2 opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto transition-all duration-200 z-50">
+              <div class="absolute left-0 top-full pt-2 opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto group-focus-within/nav:opacity-100 group-focus-within/nav:pointer-events-auto transition-all duration-200 z-50">
                 <div class="w-64 bg-canvas-pure border border-quiet-gray/30 p-2 shadow-xs space-y-1">
                   <a href="/services" class="block px-3 py-2 text-xs font-semibold text-ink hover:bg-paper-gray transition-colors border-b border-quiet-gray/15">
                     All Practices Overview &rarr;
@@ -114,14 +115,14 @@ const isActive = (path: string) => {
           href="https://wa.me/27828074342?text=Hello%20Barbara,%20I%20am%20reaching%20out%20via%20the%20Red%20Thread%20website."
           target="_blank"
           rel="noopener noreferrer"
-          class="editorial-btn inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300"
+          class="editorial-btn inline-flex items-center gap-2 min-h-11 px-3.5 text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300"
         >
           <span class="w-1.5 h-1.5 bg-emerald-600"></span>
           WhatsApp
         </a>
         <a
           href="/contact"
-          class="editorial-btn inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-thread-red hover:bg-thread-crimson border border-thread-red"
+          class="editorial-btn inline-flex items-center min-h-11 px-4 text-xs font-semibold uppercase tracking-wider text-white bg-thread-red hover:bg-thread-crimson border border-thread-red"
         >
           Get in Touch
         </a>
@@ -132,8 +133,9 @@ const isActive = (path: string) => {
         <button
           type="button"
           id="mobile-menu-button"
-          class="h-10 w-10 flex items-center justify-center text-ink border border-quiet-gray/30 hover:bg-paper-gray transition-colors focus:outline-hidden"
+          class="h-11 w-11 flex items-center justify-center text-ink border border-quiet-gray/30 hover:bg-paper-gray transition-colors"
           aria-label="Toggle navigation menu"
+          aria-controls="mobile-menu"
           aria-expanded="false"
         >
           <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,13 +150,13 @@ const isActive = (path: string) => {
   </div>
 
   <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-canvas/98 backdrop-blur-md border-b border-quiet-gray/20 px-6 pt-4 pb-6 space-y-3">
+  <div id="mobile-menu" class="hidden md:hidden bg-canvas/98 backdrop-blur-md border-b border-quiet-gray/20 px-6 pt-4 pb-6 space-y-1">
     {navLinks.map(link => (
       link.name === 'Services' ? (
         <div class="space-y-1">
           <a
             href={link.href}
-            class={`block py-2.5 text-base font-medium px-3 transition-colors ${
+            class={`flex items-center min-h-11 text-base font-medium px-3 transition-colors ${
               isActive(link.href)
                 ? 'bg-thread-red/10 text-thread-red font-semibold'
                 : 'text-ink hover:bg-paper-gray'
@@ -163,13 +165,13 @@ const isActive = (path: string) => {
             {link.name}
           </a>
           <div class="pl-4 space-y-1.5 border-l-2 border-quiet-gray/20 ml-3 text-xs">
-            <a href="/services/coaching-for-change" class="block py-1.5 text-ink-muted hover:text-thread-red">
+            <a href="/services/coaching-for-change" class="flex items-center min-h-11 text-ink-muted hover:text-thread-red">
               01. Coaching for Change
             </a>
-            <a href="/services/craftivism-and-creative-practice" class="block py-1.5 text-ink-muted hover:text-thread-red">
+            <a href="/services/craftivism-and-creative-practice" class="flex items-center min-h-11 text-ink-muted hover:text-thread-red">
               02. Craftivism & Art
             </a>
-            <a href="/services/water-governance-consulting" class="block py-1.5 text-ink-muted hover:text-thread-red">
+            <a href="/services/water-governance-consulting" class="flex items-center min-h-11 text-ink-muted hover:text-thread-red">
               03. Water Governance
             </a>
           </div>

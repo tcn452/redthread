@@ -94,6 +94,10 @@ const serviceSchema = {
             <img
               src={service.data.coverImage}
               alt={service.data.title}
+              width="1600"
+              height="1066"
+              fetchpriority="high"
+              decoding="async"
               class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.02]"
             />
           </div>
@@ -169,7 +173,7 @@ const serviceSchema = {
         <div class="p-6 bg-canvas-pure border border-quiet-gray/30 space-y-3 text-xs">
           <div class="flex items-center gap-3 pb-3 border-b border-quiet-gray/15">
             <div class="w-10 h-10 overflow-hidden border border-quiet-gray/30 bg-paper-gray shrink-0">
-              <img src="/images/logo.jpg" alt="Barbara Schreiner" class="w-full h-full object-cover" />
+              <img src="/images/logo.webp" width="1024" height="1024" alt="Red Thread mark" class="w-full h-full object-cover" />
             </div>
             <div>
               <strong class="font-serif text-sm font-semibold text-ink block">Barbara Schreiner</strong>

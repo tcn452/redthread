@@ -3,7 +3,7 @@ title: "Craftivism & Creative Practice"
 order: 2
 tagline: "Practice 02"
 shortDescription: "Rooted in Chilean arpillera traditions and South African storytelling: using cloth, needle, and creative writing as instruments of testimony, collective healing, and social change."
-coverImage: "/images/craftivism-workshop-2.jpg"
+coverImage: "/images/craftivism-workshop-2.webp"
 ---
 
 Craftivism treats making as a form of activism: the object itself becomes the argument, the evidence, and the invitation to look closer. At Red Thread, creative practice sits at the center of how we bring arts-based, people-centred processes to social and environmental justice.

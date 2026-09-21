@@ -4,7 +4,7 @@ publishedDate: "2026-03-18"
 author: "Barbara Schreiner"
 category: "coaching"
 excerpt: "Why capable leaders burn out or stall, and how one-on-one and team coaching helps reclaim clarity, direction, and joy in work."
-coverImage: "/images/individual-coaching.jpg"
+coverImage: "/images/individual-coaching.webp"
 readTime: "5 min read"
 ---
 

@@ -19,5 +19,8 @@ export default defineConfig({
   },
   redirects: {
     '/bits-and-blogs': '/blog',
+    '/portal': '/keystatic',
+    '/studio': '/keystatic',
+    '/admin': '/keystatic',
   }
 });

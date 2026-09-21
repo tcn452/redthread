@@ -3,7 +3,7 @@ title: "Coaching for Change"
 order: 1
 tagline: "Practice 01"
 shortDescription: "Transformational leadership coaching for executives, senior public servants, activists, and teams navigating high-stakes transition and burnout."
-coverImage: "/images/hero-art.jpg"
+coverImage: "/images/individual-coaching.jpg"
 ---
 
 Leadership can be lonely, particularly when you are driving structural change, steering an institution through crisis, or carrying heavy public responsibilities. When organizations face profound change, the pressure on individual leaders often leads to exhaustion, isolation, and loss of perspective.

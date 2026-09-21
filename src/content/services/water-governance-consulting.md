@@ -3,7 +3,7 @@ title: "Water Governance Consulting"
 order: 3
 tagline: "Practice 03"
 shortDescription: "Advisory, institutional transition, anti-corruption frameworks, and policy reform backed by thirty years of national and international public sector leadership."
-coverImage: "/images/water-governance.jpg"
+coverImage: "/images/group-coaching.jpg"
 ---
 
 Water is humanity's most essential common good, yet water governance is fraught with systemic vulnerabilities: institutional inertia, political interference, corruption risks, and climate unpredictability. Effective water sector transformation requires both strategic policy vision and an intimate understanding of how public bureaucracies actually operate.

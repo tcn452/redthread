@@ -1,18 +1,127 @@
 ---
 import KeystaticAdmin from '../../components/KeystaticAdmin';
+import crypto from 'node:crypto';
 
 export const prerender = false;
+
+// Password can be overridden via Vercel env variable ADMIN_PASSWORD or KEYSTATIC_PASSWORD
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || process.env.KEYSTATIC_PASSWORD || 'RedThread2026!';
+const expectedHash = crypto.createHash('sha256').update(ADMIN_PASSWORD).digest('hex');
+
+const authCookie = Astro.cookies.get('redthread_cms_auth')?.value;
+let isAuthenticated = authCookie === expectedHash;
+let errorMessage = '';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const action = formData.get('action')?.toString();
+
+    if (action === 'logout') {
+      Astro.cookies.delete('redthread_cms_auth', { path: '/' });
+      return Astro.redirect('/keystatic');
+    }
+
+    const submittedPassword = formData.get('password')?.toString() || '';
+    const submittedHash = crypto.createHash('sha256').update(submittedPassword).digest('hex');
+
+    if (submittedHash === expectedHash) {
+      Astro.cookies.set('redthread_cms_auth', expectedHash, {
+        path: '/',
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 14, // 14 days
+      });
+      isAuthenticated = true;
+    } else {
+      errorMessage = 'Incorrect password. Please try again.';
+    }
+  } catch {
+    errorMessage = 'An error occurred during authentication.';
+  }
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full bg-canvas text-ink antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RedThread Content Studio | Keystatic</title>
+    <title>Editorial Studio | Red Thread NPC</title>
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body style="margin: 0; min-height: 100vh; background-color: #faf8f5;">
-    <KeystaticAdmin client:only="react" />
+    {isAuthenticated ? (
+      <KeystaticAdmin client:only="react" />
+    ) : (
+      <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background-color: #faf8f5;">
+        <div style="width: 100%; max-width: 440px; background: #ffffff; border: 1px solid #e2ddd5; padding: 40px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+          
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f0ede8;">
+            <div style="width: 44px; height: 44px; overflow: hidden; border: 1px solid #e2ddd5; background: #faf8f5; flex-shrink: 0;">
+              <img src="/images/logo.jpg" alt="Red Thread Logo" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div>
+              <div style="font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: #1a1918; letter-spacing: -0.02em;">
+                Red Thread <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 400; color: #736f69; text-transform: uppercase; letter-spacing: 0.1em;">NPC</span>
+              </div>
+              <div style="font-size: 12px; color: #736f69; font-style: italic; font-family: 'Newsreader', serif;">
+                Editorial Content Studio
+              </div>
+            </div>
+          </div>
+
+          <h1 style="font-family: 'Newsreader', serif; font-size: 24px; font-weight: 400; color: #1a1918; margin: 0 0 8px 0; letter-spacing: -0.01em;">
+            Studio Access
+          </h1>
+          <p style="font-size: 13px; color: #736f69; line-height: 1.5; margin: 0 0 24px 0; font-weight: 300;">
+            This area is reserved for Red Thread editors and administrators. Enter your studio password to continue.
+          </p>
+
+          {errorMessage && (
+            <div style="background-color: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 14px; font-size: 12px; margin-bottom: 18px;">
+              {errorMessage}
+            </div>
+          )}
+
+          <form method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label for="password" style="display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #3b3936; margin-bottom: 6px;">
+                Studio Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                autofocus
+                placeholder="Enter password..."
+                style="width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 14px; border: 1px solid #ccc6bd; background: #ffffff; color: #1a1918; outline: none; transition: border-color 0.2s;"
+              />
+            </div>
+
+            <button
+              type="submit"
+              style="width: 100%; padding: 13px 20px; background-color: #9c2a2a; color: #ffffff; border: none; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: background-color 0.2s;"
+            >
+              Unlock Studio
+            </button>
+          </form>
+
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f0ede8; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #9e9a93;">
+            <span>Protected by Red Thread Security</span>
+            <a href="/" style="color: #736f69; text-decoration: none;">&larr; Back to Public Site</a>
+          </div>
+        </div>
+      </div>
+    )}
   </body>
 </html>

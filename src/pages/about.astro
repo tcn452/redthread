@@ -1,10 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://redthread-zeta.vercel.app';
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Barbara Schreiner",
+  "jobTitle": "Founder & Executive Director, Red Thread NPC",
+  "description": "Writer, transformational coach, textile artist, and senior water governance advisor with over 30 years of public policy leadership in South Africa and internationally.",
+  "image": `${siteUrl}/images/logo.jpg`,
+  "url": new URL(Astro.url.pathname, siteUrl).toString(),
+  "worksFor": {
+    "@type": "NGO",
+    "name": "Red Thread NPC",
+    "url": siteUrl
+  },
+  "knowsAbout": [
+    "Transformational Leadership Coaching",
+    "Water Governance & Integrity",
+    "Chilean Arpillera & Textile Craftivism",
+    "Public Sector Policy Frameworks",
+    "Creative Writing & Collective Healing"
+  ]
+};
 ---
 
 <BaseLayout
   title="About Barbara Schreiner & Red Thread NPC"
   description="Bringing 30+ years of senior water governance, published literature, Chilean arpillera craftivism, and transformational leadership coaching to the table."
+  jsonLd={personSchema}
 >
   <!-- Hero Section -->
   <section class="pt-16 pb-20 md:pt-24 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

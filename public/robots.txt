@@ -1,0 +1,8 @@
+# Red Thread NPC - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /keystatic
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://redthread-zeta.vercel.app/sitemap-index.xml

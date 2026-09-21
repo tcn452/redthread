@@ -7,13 +7,46 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  type?: 'website' | 'article';
+  jsonLd?: Record<string, any> | Array<Record<string, any>>;
 }
 
 const {
-  title = "RedThread NPC | Creative Practice for Change",
-  description = "At RedThread we turn testimony into transformation through creativity, coaching, and consulting.",
-  image = "/images/logo.jpg"
+  title = "Red Thread NPC | Turning Testimony into Transformation",
+  description = "Red Thread works at the intersection of craft, art, writing, and social change. Creativity, transformational coaching, and water governance consulting by Barbara Schreiner.",
+  image = "/images/logo.jpg",
+  type = "website",
+  jsonLd
 } = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://redthread-zeta.vercel.app';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+const resolvedImageURL = new URL(image, siteUrl).toString();
+
+const defaultOrgSchema = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Red Thread NPC",
+  "alternateName": "Red Thread",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/logo.jpg`,
+  "image": `${siteUrl}/images/logo.jpg`,
+  "description": "Red Thread works at the intersection of craft, art, writing, and social change. Creative practice, transformational coaching, and water governance consulting.",
+  "founder": {
+    "@type": "Person",
+    "name": "Barbara Schreiner",
+    "jobTitle": "Founder & Executive Director"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ZA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27-82-807-4342",
+    "contactType": "consultations"
+  }
+};
 ---
 
 <!doctype html>
@@ -24,15 +57,38 @@ const {
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph / Meta -->
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Barbara Schreiner" />
+    <meta name="geo.region" content="ZA" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:site_name" content="Red Thread NPC" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={resolvedImageURL} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedImageURL} />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(defaultOrgSchema)} />
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
 
     <!-- Google Fonts: Newsreader (Editorial Serif) & Plus Jakarta Sans (Clean Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

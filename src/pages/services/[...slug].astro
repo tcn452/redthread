@@ -15,11 +15,29 @@ const { Content } = await render(service);
 
 const allServices = (await getCollection('services')).sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
 const otherServices = allServices.filter(s => s.id !== service.id);
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://redthread-zeta.vercel.app';
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": service.data.title,
+  "description": service.data.shortDescription,
+  "serviceType": service.data.tagline || service.data.title,
+  "provider": {
+    "@type": "NGO",
+    "name": "Red Thread NPC",
+    "url": siteUrl
+  },
+  "areaServed": "Global",
+  "url": new URL(Astro.url.pathname, siteUrl).toString()
+};
 ---
 
 <BaseLayout
   title={`${service.data.title} | Red Thread NPC`}
   description={service.data.shortDescription || `${service.data.title} at Red Thread NPC.`}
+  image={service.data.coverImage}
+  jsonLd={serviceSchema}
 >
   <!-- Service Hero Section -->
   <header class="pt-16 pb-12 md:pt-20 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-quiet-gray/20">

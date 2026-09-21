@@ -1,11 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactForm from '../components/ContactForm';
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://redthread-zeta.vercel.app';
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Barbara Schreiner & Red Thread NPC",
+  "description": "Schedule a free 15-minute consultation, inquire about craftivism workshops, or discuss water governance consulting.",
+  "url": new URL(Astro.url.pathname, siteUrl).toString(),
+  "mainEntity": {
+    "@type": "NGO",
+    "name": "Red Thread NPC",
+    "telephone": "+27-82-807-4342",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27-82-807-4342",
+      "contactType": "consultations",
+      "availableLanguage": ["English"]
+    }
+  }
+};
 ---
 
 <BaseLayout
   title="Contact & Free 15-Min Consultation | Red Thread NPC"
   description="Connect with Barbara Schreiner. Schedule a free 15-minute coaching exploration call, inquire about craftivism workshops, or discuss water consulting."
+  jsonLd={contactSchema}
 >
   <!-- Hero Section -->
   <section class="pt-16 pb-12 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

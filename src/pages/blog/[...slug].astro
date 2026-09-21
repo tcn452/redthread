@@ -12,12 +12,40 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://redthread-zeta.vercel.app';
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "image": post.data.coverImage ? new URL(post.data.coverImage, siteUrl).toString() : `${siteUrl}/images/logo.jpg`,
+  "datePublished": post.data.publishedDate,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author || "Barbara Schreiner"
+  },
+  "publisher": {
+    "@type": "NGO",
+    "name": "Red Thread NPC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/images/logo.jpg`
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, siteUrl).toString()
+  }
+};
 ---
 
 <BaseLayout
   title={`${post.data.title} | Red Thread NPC`}
   description={post.data.excerpt}
   image={post.data.coverImage}
+  type="article"
+  jsonLd={articleSchema}
 >
   <article class="pt-16 pb-28">
     <!-- Article Header -->

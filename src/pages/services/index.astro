@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const services = (await getCollection('services')).sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+const anchorMap: Record<string, string> = {
+  'coaching-for-change': 'coaching',
+  'craftivism-and-creative-practice': 'creativity',
+  'water-governance-consulting': 'consulting',
+};
+---
+
+<BaseLayout
+  title="Practices & Services | Red Thread NPC"
+  description="Explore Red Thread's three core practices: Coaching for Change, Textile Craftivism & Creative Practice, and Water Governance Consulting."
+>
+  <!-- Hero Section -->
+  <section class="pt-16 pb-16 md:pt-24 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="max-w-4xl space-y-6">
+      <span class="reveal text-xs font-semibold uppercase tracking-widest text-terracotta">What We Offer</span>
+      <h1 class="reveal delay-100 text-4xl sm:text-6xl md:text-7xl font-display-light text-ink tracking-tight">
+        Three practices for <span class="font-display-italic text-thread-red">transformational</span> change.
+      </h1>
+      <p class="reveal delay-200 text-lg sm:text-xl text-ink-muted font-light leading-relaxed">
+        Whether working with an individual leader seeking renewed direction, a community voicing untold stories through textile craft, or an institution navigating governance reform.
+      </p>
+
+      <!-- Quick Anchor Tabs -->
+      <div class="reveal delay-300 flex flex-wrap gap-3 pt-4">
+        {services.map((svc) => (
+          <a
+            href={`/services/${svc.id}`}
+            class="editorial-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-canvas-pure border border-quiet-gray/30 hover:border-thread-red hover:text-thread-red text-ink transition-colors"
+          >
+            {svc.data.tagline || 'Practice'}. {svc.data.title} &rarr;
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual Service Overview Cards -->
+  <section class="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    {services.map((svc, index) => {
+      const anchorId = anchorMap[svc.id] || svc.id;
+      const isEven = index % 2 === 1;
+
+      return (
+        <article
+          id={anchorId}
+          class="scroll-mt-24 p-8 sm:p-12 bg-canvas-pure border border-quiet-gray/20 hover:border-quiet-gray/40 transition-colors"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Image Column -->
+            <div class={`lg:col-span-5 ${isEven ? 'lg:order-2' : ''}`}>
+              {svc.data.coverImage && (
+                <div class="group aspect-[16/10] w-full overflow-hidden bg-paper-gray border border-quiet-gray/20">
+                  <img
+                    src={svc.data.coverImage}
+                    alt={svc.data.title}
+                    class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+                  />
+                </div>
+              )}
+            </div>
+
+            <!-- Content Column -->
+            <div class={`lg:col-span-7 space-y-5 ${isEven ? 'lg:order-1' : ''}`}>
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">
+                  {svc.data.tagline || `Practice 0${index + 1}`}
+                </span>
+                <span class="text-quiet-gray/40">&bull;</span>
+                <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">
+                  Barbara Schreiner
+                </span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl font-display-light text-ink">
+                <a href={`/services/${svc.id}`} class="hover:text-thread-red transition-colors">
+                  {svc.data.title}
+                </a>
+              </h2>
+
+              <p class="text-base text-ink-muted font-light leading-relaxed">
+                {svc.data.shortDescription}
+              </p>
+
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <a
+                  href={`/services/${svc.id}`}
+                  class="editorial-btn px-6 py-3 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold border border-ink hover:border-thread-crimson"
+                >
+                  Explore Dedicated Practice &rarr;
+                </a>
+                <a
+                  href={`/contact?service=${encodeURIComponent(svc.data.title)}#consultation`}
+                  class="editorial-btn px-6 py-3 bg-canvas border border-quiet-gray/30 hover:border-ink text-ink text-xs uppercase tracking-widest font-semibold"
+                >
+                  Initial Consultation
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </article>
+      );
+    })}
+  </section>
+
+  <!-- Engagement Process -->
+  <section class="py-20 bg-paper-gray/40 border-t border-quiet-gray/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+      <div class="max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">How We Work Together</span>
+        <h2 class="text-3xl sm:text-4xl font-display-light text-ink">
+          The engagement <span class="font-display-italic text-thread-red">process</span>.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <div class="reveal delay-100 p-8 bg-canvas-pure border border-quiet-gray/20 space-y-3">
+          <span class="text-2xl font-serif font-bold text-thread-red">01</span>
+          <h3 class="font-serif text-lg font-semibold text-ink">15-Minute Exploration</h3>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            A complimentary conversation to listen to your current challenge, whether you are an individual facing burnout or an organization planning a transition.
+          </p>
+        </div>
+
+        <div class="reveal delay-200 p-8 bg-canvas-pure border border-quiet-gray/20 space-y-3">
+          <span class="text-2xl font-serif font-bold text-thread-red">02</span>
+          <h3 class="font-serif text-lg font-semibold text-ink">Tailored Framing</h3>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            We co-create a clear roadmap: number of coaching sessions, workshop format, or consulting deliverables shaped around your exact needs and timeline.
+          </p>
+        </div>
+
+        <div class="reveal delay-300 p-8 bg-canvas-pure border border-quiet-gray/20 space-y-3">
+          <span class="text-2xl font-serif font-bold text-thread-red">03</span>
+          <h3 class="font-serif text-lg font-semibold text-ink">Deep Engagement</h3>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            Sessions run in-person, over video, or via WhatsApp, backed by 30+ years of senior executive experience and creative methodology.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <a
+          href="/contact#consultation"
+          class="editorial-btn px-8 py-3.5 bg-thread-red hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold inline-block border border-thread-red"
+        >
+          Book Your 15-Minute Session Now
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

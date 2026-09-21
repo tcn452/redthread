@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()).slice(0, 3);
+---
+
+<BaseLayout
+  title="Red Thread NPC | Turning Testimony into Transformation"
+  description="Red Thread works at the intersection of craft, art, writing, and social change. Creativity, transformational coaching, and water governance consulting by Barbara Schreiner."
+>
+  <!-- Hero Section: Editorial Gallery Wall with Refero Reveal Animation -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Availability Signal (Refero architectural line) -->
+    <div class="reveal flex items-center gap-2 mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-canvas-pure border border-quiet-gray/30 text-xs font-medium text-ink">
+        <span class="w-1.5 h-1.5 bg-emerald-600"></span>
+        <span>Available for select 2026 coaching & consulting engagements</span>
+      </div>
+    </div>
+
+    <!-- Main Editorial Headline with Italic Splice -->
+    <div class="space-y-6 max-w-5xl">
+      <h1 class="reveal delay-100 text-4xl sm:text-6xl md:text-7xl font-display-light text-ink tracking-tight">
+        At Red Thread, we turn testimony into <span class="font-display-italic text-thread-red">transformation</span>.
+      </h1>
+
+      <p class="reveal delay-200 text-lg sm:text-xl md:text-2xl text-ink-muted max-w-3xl leading-relaxed font-light">
+        Using creative, people-centred methods, Red Thread enables individuals and groups to find their voice &mdash; whether in search of personal development or the creation of a more just, equal society.
+      </p>
+
+      <!-- Action Controls (Refero Architectural Style) -->
+      <div class="reveal delay-300 flex flex-wrap items-center gap-4 pt-4">
+        <a
+          href="/services"
+          class="editorial-btn px-8 py-3.5 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold"
+        >
+          Explore Our Practices
+        </a>
+        <a
+          href="/contact#consultation"
+          class="editorial-btn px-8 py-3.5 bg-canvas-pure hover:bg-paper-gray text-ink border border-quiet-gray/30 text-xs uppercase tracking-widest font-semibold"
+        >
+          Schedule an Initial Consultation
+        </a>
+        <a
+          href="https://wa.me/27828074342"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="editorial-btn px-6 py-3.5 text-emerald-900 hover:text-emerald-950 text-xs font-medium flex items-center gap-2 border border-emerald-300 bg-emerald-50/60"
+        >
+          <span class="w-1.5 h-1.5 bg-emerald-600"></span>
+          WhatsApp Barbara Directly
+        </a>
+      </div>
+    </div>
+
+    <!-- Concrete Credentials Row (Refero Editorial Style) -->
+    <div class="reveal delay-400 mt-20 pt-8 border-t border-quiet-gray/20 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">30+</span>
+        <span class="text-xs uppercase tracking-wider text-ink-muted">Years in Policy & Governance</span>
+      </div>
+      <div>
+        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">DWAF & WIN</span>
+        <span class="text-xs uppercase tracking-wider text-ink-muted">Senior Executive Leadership</span>
+      </div>
+      <div>
+        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">6</span>
+        <span class="text-xs uppercase tracking-wider text-ink-muted">Published Books & Works</span>
+      </div>
+      <div>
+        <span class="block text-3xl sm:text-4xl font-display text-thread-red font-semibold">Arpilleras</span>
+        <span class="text-xs uppercase tracking-wider text-ink-muted">Textile Craftivism & Testimony</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Feature: Raw Portfolio Crop with Zoom Animation (Refero style) -->
+  <section class="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="group relative w-full aspect-[21/9] sm:aspect-[24/10] overflow-hidden bg-canvas-pure border border-quiet-gray/20">
+      <img
+        src="/images/women-of-gaza.jpg"
+        alt="Women of Gaza textile arpillera art piece by Barbara Schreiner"
+        class="w-full h-full object-cover object-center filter saturate-[0.95] hover-img-zoom group-hover:scale-[1.03]"
+      />
+      <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:bottom-6 bg-canvas/95 backdrop-blur-xs py-2 px-4 max-w-md border border-quiet-gray/20 text-xs text-ink">
+        <span class="font-semibold text-thread-red uppercase tracking-wider block text-[10px]">Textile Craftivism in Practice</span>
+        <span class="italic font-serif">&ldquo;Women of Gaza&rdquo;</span> &mdash; Arpillera tradition of cloth, needle, and testimony by Barbara Schreiner.
+      </div>
+    </div>
+  </section>
+
+  <!-- Narrative Section: Creating Change -->
+  <section class="py-20 bg-paper-gray/40 border-y border-quiet-gray/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="reveal lg:col-span-4 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Our Foundation</span>
+          <h2 class="text-3xl sm:text-4xl font-display-light text-ink">
+            Creating change, <span class="font-display-italic text-thread-crimson">one thread</span> at a time.
+          </h2>
+          <p class="text-xs text-ink-muted font-serif italic leading-relaxed">
+            &ldquo;Red Thread believes that change is stitched together one thread, one story, one voice at a time, whether through groups working together or individuals pursuing personal development needs.&rdquo;
+          </p>
+        </div>
+
+        <div class="reveal delay-200 lg:col-span-8 space-y-6 text-base text-ink-muted leading-relaxed font-light">
+          <p>
+            Red Thread works at the intersection of craft, art, writing, and social change. We use creative methods &mdash; rooted in South African storytelling and craftivism traditions &mdash; to amplify the voices of those too often left unheard, and to open new ways of confronting the challenges of an unequal society.
+          </p>
+          <p>
+            Alongside this, we offer consulting for change &mdash; particularly in the water sector &mdash; and build capacity for transformational leadership through coaching and mentoring. Our work spans social and environmental justice, including water justice, using people-centred, creative processes that bring communities together, surface lived experience, and turn testimony into change.
+          </p>
+          <div class="p-6 bg-canvas border-l-2 border-thread-red">
+            <p class="text-sm text-ink font-medium">
+              &ldquo;Feel free to contact me to set up an exploratory conversation to discuss your context and needs.&rdquo;
+            </p>
+            <span class="block mt-2 text-xs font-semibold text-terracotta uppercase tracking-wider">&mdash; Barbara Schreiner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Three Core Practices (Unboxed Gallery Style with Scroll Reveal) -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">What We Do</span>
+        <h2 class="text-4xl sm:text-5xl font-display-light text-ink mt-2">
+          Three pillars of <span class="font-display-italic text-thread-red">practice</span>.
+        </h2>
+      </div>
+      <a href="/services" class="text-xs uppercase tracking-widest font-semibold text-ink hover:text-thread-red transition-colors flex items-center gap-1">
+        Detailed Overview &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Pillar 1: Creativity -->
+      <div class="reveal flex flex-col group">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-canvas-pure border border-quiet-gray/20 mb-6">
+          <img
+            src="/images/craftivism-workshop-1.jpg"
+            alt="Craftivism and textile workshop"
+            class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+          />
+        </div>
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta mb-2">01 / Creative Practice</span>
+        <h3 class="text-2xl font-serif font-medium text-ink mb-3 group-hover:text-thread-red transition-colors">
+          Creativity for Change
+        </h3>
+        <p class="text-sm text-ink-muted leading-relaxed font-light mb-6 flex-1">
+          Rooted in Chilean arpillera traditions and South African craftivism. We use cloth, thread, and creative writing as instruments of testimony, collective healing, and social justice.
+        </p>
+        <a href="/services/craftivism-and-creative-practice" class="text-xs uppercase tracking-wider font-semibold text-thread-red hover:text-thread-crimson">
+          Learn about Craftivism &rarr;
+        </a>
+      </div>
+
+      <!-- Pillar 2: Coaching -->
+      <div class="reveal delay-100 flex flex-col group">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-canvas-pure border border-quiet-gray/20 mb-6">
+          <img
+            src="/images/individual-coaching.jpg"
+            alt="One-on-one transformational coaching"
+            class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+          />
+        </div>
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta mb-2">02 / Leadership & Renewal</span>
+        <h3 class="text-2xl font-serif font-medium text-ink mb-3 group-hover:text-thread-red transition-colors">
+          Coaching for Change
+        </h3>
+        <p class="text-sm text-ink-muted leading-relaxed font-light mb-6 flex-1">
+          For individuals navigating burnout, career redirection, or habits holding them back; and for organizations in restructuring or leadership transitions. Offered in person or online.
+        </p>
+        <a href="/services/coaching-for-change" class="text-xs uppercase tracking-wider font-semibold text-thread-red hover:text-thread-crimson">
+          Explore Coaching &rarr;
+        </a>
+      </div>
+
+      <!-- Pillar 3: Consulting -->
+      <div class="reveal delay-200 flex flex-col group">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-canvas-pure border border-quiet-gray/20 mb-6">
+          <img
+            src="/images/group-coaching.jpg"
+            alt="Water governance and institutional consulting"
+            class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+          />
+        </div>
+        <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta mb-2">03 / Policy & Integrity</span>
+        <h3 class="text-2xl font-serif font-medium text-ink mb-3 group-hover:text-thread-red transition-colors">
+          Consulting for Change
+        </h3>
+        <p class="text-sm text-ink-muted leading-relaxed font-light mb-6 flex-1">
+          Thirty years inside water governance & public leadership. We advise on institutional integrity, anti-corruption frameworks, water tenure, and organizational transition across Africa and internationally.
+        </p>
+        <a href="/services/water-governance-consulting" class="text-xs uppercase tracking-wider font-semibold text-thread-red hover:text-thread-crimson">
+          Consulting Advisory &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Spotlight: Barbara Schreiner -->
+  <section class="py-24 bg-canvas-pure border-t border-quiet-gray/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="reveal lg:col-span-5">
+          <div class="aspect-[3/4] max-w-md mx-auto overflow-hidden border border-quiet-gray/20 bg-paper-gray">
+            <img
+              src="/images/logo.jpg"
+              alt="Barbara Schreiner - Red Thread Founder"
+              class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+            />
+          </div>
+        </div>
+
+        <div class="reveal delay-200 lg:col-span-7 space-y-6">
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Founder & Principal</span>
+          <h2 class="text-4xl sm:text-5xl font-display-light text-ink">
+            Barbara <span class="font-display-italic text-thread-red">Schreiner</span>
+          </h2>
+          <p class="text-base text-ink-muted leading-relaxed font-light">
+            &ldquo;I’ve spent most of my working life moving between worlds that aren’t supposed to overlap: government offices and theatre back rooms, water governance and writing workshops, senior management and needle and thread.&rdquo;
+          </p>
+          <div class="space-y-3 text-sm text-ink-muted font-light">
+            <p>
+              Former <strong>Deputy Director General</strong> at South Africa's Department of Water Affairs, <strong>Executive Director</strong> of the Water Integrity Network (WIN), steering committee member of the <strong>Open Government Partnership</strong> and <strong>OECD Water Governance Initiative</strong>, and member of South Africa's <strong>National Anti-Corruption Advisory Committee</strong>.
+            </p>
+            <p>
+              Author of two novels, a biography, poetry, and editor of a landmark collection of South African women’s prison writings.
+            </p>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a
+              href="/about"
+              class="editorial-btn px-7 py-3 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold"
+            >
+              Read Barbara's Story & CV
+            </a>
+            <a
+              href="/about#values"
+              class="editorial-btn px-7 py-3 bg-canvas hover:bg-paper-gray text-ink border border-quiet-gray/30 text-xs uppercase tracking-widest font-semibold"
+            >
+              Mission, Vision & Values
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Articles / Bits and Blogs -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Bits & Blogs</span>
+        <h2 class="text-3xl sm:text-4xl font-display-light text-ink mt-1">
+          Essays, stories & <span class="font-display-italic text-thread-red">reflections</span>.
+        </h2>
+      </div>
+      <a href="/blog" class="text-xs uppercase tracking-widest font-semibold text-ink hover:text-thread-red transition-colors">
+        View All Articles &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {sortedPosts.map((post, index) => (
+        <article class={`reveal delay-${(index + 1) * 100} flex flex-col group`}>
+          {post.data.coverImage && (
+            <a href={`/blog/${post.id}`} class="aspect-[16/10] w-full overflow-hidden bg-paper-gray border border-quiet-gray/20 mb-4 block">
+              <img
+                src={post.data.coverImage}
+                alt={post.data.title}
+                class="w-full h-full object-cover hover-img-zoom group-hover:scale-[1.03]"
+              />
+            </a>
+          )}
+          <div class="flex items-center gap-2 mb-2 text-xs text-ink-muted">
+            <span class="text-terracotta font-semibold uppercase tracking-wider text-[10px]">
+              {post.data.category}
+            </span>
+            <span>&bull;</span>
+            <span>{post.data.readTime || '5 min read'}</span>
+          </div>
+          <h3 class="font-serif text-xl font-medium text-ink group-hover:text-thread-red transition-colors mb-2">
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </h3>
+          <p class="text-xs text-ink-muted leading-relaxed font-light line-clamp-3 mb-4 flex-1">
+            {post.data.excerpt}
+          </p>
+          <a href={`/blog/${post.id}`} class="text-xs font-semibold text-thread-red hover:underline">
+            Read Article &rarr;
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Banner: Grounded, Authoritative Engagement Section -->
+  <section class="reveal py-20 bg-thread-crimson text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="text-xs font-semibold uppercase tracking-widest text-white/80 block">Initiating Engagement</span>
+      <h2 class="text-3xl sm:text-5xl font-display-light tracking-tight text-white">
+        Connecting lived experience, policy reform, and <span class="font-display-italic text-white underline decoration-white/30 underline-offset-8">creative voice</span>.
+      </h2>
+      <p class="text-sm sm:text-base text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
+        Whether you are seeking executive coaching through institutional transition, exploring a community craftivism workshop, or addressing water governance challenges, we welcome a direct conversation.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact#consultation"
+          class="editorial-btn px-8 py-3.5 bg-white text-thread-crimson hover:bg-canvas text-xs uppercase tracking-widest font-bold"
+        >
+          Schedule a Consultation
+        </a>
+        <a
+          href="https://wa.me/27828074342?text=Hello%20Barbara,%20I%20would%20like%20to%20connect%20with%20Red%20Thread."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="editorial-btn px-8 py-3.5 bg-transparent hover:bg-white/10 text-white border border-white/70 text-xs uppercase tracking-widest font-semibold"
+        >
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

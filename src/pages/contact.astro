@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm';
+---
+
+<BaseLayout
+  title="Contact & Free 15-Min Consultation | Red Thread NPC"
+  description="Connect with Barbara Schreiner. Schedule a free 15-minute coaching exploration call, inquire about craftivism workshops, or discuss water consulting."
+>
+  <!-- Hero Section -->
+  <section class="pt-16 pb-12 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="max-w-3xl space-y-4">
+      <span class="reveal text-xs font-semibold uppercase tracking-widest text-terracotta">Get in Touch</span>
+      <h1 class="reveal delay-100 text-4xl sm:text-6xl font-display-light text-ink tracking-tight">
+        Let’s start a <span class="font-display-italic text-thread-red">conversation</span>.
+      </h1>
+      <p class="reveal delay-200 text-lg text-ink-muted font-light leading-relaxed">
+        Whether you are seeking personal transformational coaching, community textile craftivism workshops, or water governance advisory, I look forward to hearing from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content & Form Grid -->
+  <section class="pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Direct Contact Details & 15-Min Session Card -->
+      <div class="reveal lg:col-span-5 space-y-8">
+        <!-- Initial Consultation Highlight -->
+        <div id="consultation" class="p-8 bg-paper-gray/70 border border-quiet-gray/30 space-y-4 scroll-mt-28">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 bg-thread-red/10 border border-thread-red/30 text-thread-red text-[11px] font-semibold uppercase tracking-wider">
+            <span>Complimentary</span>
+          </div>
+          <h3 class="font-serif text-2xl text-ink font-medium">Initial Conversation (15 Minutes)</h3>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            Schedule an informal conversation to discuss your context, explore what working together could look like, and determine whether coaching, workshop facilitation, or governance advisory aligns with your goals.
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://wa.me/27828074342?text=Hello%20Barbara,%20I%20would%20like%20to%20schedule%20an%20initial%2015-minute%20conversation."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="editorial-btn w-full text-center py-3 px-5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider block border border-emerald-600"
+            >
+              Connect via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Numbers & Direct Channels (from original site) -->
+        <div class="p-8 bg-canvas-pure border border-quiet-gray/30 space-y-6">
+          <h3 class="font-serif text-xl font-semibold text-ink">Contact Details</h3>
+
+          <div class="space-y-4 text-xs">
+            <div>
+              <span class="text-[10px] uppercase font-semibold text-terracotta tracking-wider block mb-1">General Inquiries</span>
+              <a href="tel:+27828074342" class="text-base font-medium text-ink hover:text-thread-red transition-colors">
+                +27 82 807 4342
+              </a>
+            </div>
+
+            <div>
+              <span class="text-[10px] uppercase font-semibold text-terracotta tracking-wider block mb-1">WhatsApp Messages</span>
+              <a href="https://wa.me/27828074342" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-emerald-800 hover:underline flex items-center gap-1.5">
+                <span>+27 82 807 4342</span>
+                <span class="text-xs font-normal text-emerald-600">(Click to open)</span>
+              </a>
+            </div>
+
+            <div>
+              <span class="text-[10px] uppercase font-semibold text-terracotta tracking-wider block mb-1">Email</span>
+              <a href="mailto:barbaraschreinerz@gmail.com" class="text-base font-medium text-ink hover:text-thread-red transition-colors">
+                barbaraschreinerz@gmail.com
+              </a>
+            </div>
+
+            <div class="pt-4 border-t border-quiet-gray/15">
+              <span class="text-[10px] uppercase font-semibold text-terracotta tracking-wider block mb-1">Session Locations</span>
+              <p class="text-xs text-ink-muted leading-relaxed font-light">
+                Face-to-face in South Africa, or globally via video calls (Zoom, Teams, Google Meet) or direct WhatsApp.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Contact Form -->
+      <div class="lg:col-span-7 bg-canvas-pure p-8 sm:p-10 border border-quiet-gray/30 space-y-6">
+        <div class="space-y-2">
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Send a Direct Message</span>
+          <h2 class="text-2xl sm:text-3xl font-display-light text-ink">
+            How can we <span class="font-display-italic text-thread-red">collaborate</span>?
+          </h2>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            Fill in your details below and Barbara Schreiner will respond within 24 to 48 hours.
+          </p>
+        </div>
+
+        <ContactForm client:load />
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

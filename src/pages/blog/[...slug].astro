@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title} | Red Thread NPC`}
+  description={post.data.excerpt}
+  image={post.data.coverImage}
+>
+  <article class="pt-16 pb-28">
+    <!-- Article Header -->
+    <header class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div class="flex items-center justify-center gap-2 text-xs">
+        <a href="/blog" class="text-ink-muted hover:text-thread-red transition-colors">&larr; Back to Bits & Blogs</a>
+        <span class="text-quiet-gray">&bull;</span>
+        <span class="text-terracotta font-semibold uppercase tracking-widest text-[11px]">{post.data.category}</span>
+        <span class="text-quiet-gray">&bull;</span>
+        <span class="text-ink-muted">{post.data.publishedDate}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-display-light text-ink tracking-tight leading-tight">
+        {post.data.title}
+      </h1>
+
+      <p class="text-base sm:text-lg text-ink-muted font-light max-w-2xl mx-auto leading-relaxed">
+        {post.data.excerpt}
+      </p>
+
+      <div class="pt-2 flex items-center justify-center gap-4 text-xs text-ink-muted">
+        <span>Written by <strong class="text-ink font-medium">{post.data.author}</strong></span>
+        {post.data.readTime && (
+          <>
+            <span>&bull;</span>
+            <span>{post.data.readTime}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <!-- Cover Image (if available) -->
+    {post.data.coverImage && (
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+        <div class="aspect-[21/9] sm:aspect-[24/10] w-full overflow-hidden bg-paper-gray border border-quiet-gray/20">
+          <img
+            src={post.data.coverImage}
+            alt={post.data.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    )}
+
+    <!-- Article Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-stone prose-lg max-w-none font-light leading-relaxed prose-headings:font-serif prose-headings:font-normal prose-h2:text-3xl prose-h3:text-2xl prose-h2:text-ink prose-h3:text-ink prose-blockquote:border-l-2 prose-blockquote:border-thread-red prose-blockquote:bg-paper-gray/40 prose-blockquote:py-3 prose-blockquote:px-6 prose-blockquote:italic prose-blockquote:font-serif prose-a:text-thread-red prose-a:underline hover:prose-a:text-thread-crimson">
+        <Content />
+      </div>
+
+      <!-- Author Bio Footer Box -->
+      <div class="mt-16 pt-10 border-t border-quiet-gray/20 flex flex-col sm:flex-row items-center gap-6 bg-canvas-pure p-8 border border-quiet-gray/30">
+        <div class="w-20 h-20 overflow-hidden shrink-0 border border-quiet-gray/30 bg-paper-gray">
+          <img src="/images/logo.jpg" alt="Barbara Schreiner" class="w-full h-full object-cover" />
+        </div>
+        <div class="space-y-2 text-center sm:text-left">
+          <h4 class="font-serif text-xl font-semibold text-ink">Barbara Schreiner</h4>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            Founder of Red Thread NPC, Executive Director of the Water Integrity Network, writer, cultural activist, and transformational coach. 30+ years in international water governance and social justice.
+          </p>
+          <div class="pt-1 flex flex-wrap justify-center sm:justify-start gap-4 text-xs font-semibold">
+            <a href="/contact#consultation" class="text-thread-red hover:underline">Initial Consultation &rarr;</a>
+            <a href="/about" class="text-ink-muted hover:text-ink">Full Biography &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Share / Next Step -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-paper-gray/50 border border-quiet-gray/20 text-xs">
+        <span class="text-ink-muted">Found this insightful? Share or reach out:</span>
+        <div class="flex items-center gap-3">
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(post.data.title + ' - ' + Astro.url.href)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="editorial-btn px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium border border-emerald-600"
+          >
+            Share on WhatsApp
+          </a>
+          <a
+            href="/contact"
+            class="editorial-btn px-4 py-2 bg-ink hover:bg-thread-crimson text-canvas font-medium border border-ink"
+          >
+            Connect with Barbara
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,220 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = Astro.url.pathname } = Astro.props;
+
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const isActive = (path: string) => {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && currentPath.startsWith(path)) return true;
+  return false;
+};
+---
+
+<header class="sticky top-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-quiet-gray/20 transition-all duration-300">
+  <!-- Top announcement bar for advisory & coaching (Explicit white text on crimson) -->
+  <div class="bg-thread-crimson text-white text-xs py-2 px-4 text-center tracking-wide font-medium flex items-center justify-center gap-2">
+    <span class="text-white font-light">Advisory, coaching & craftivism workshops with Barbara Schreiner:</span>
+    <a href="/contact#consultation" class="underline underline-offset-2 font-semibold text-white hover:text-white/90 transition-colors">
+      Schedule an Initial Conversation &rarr;
+    </a>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo & Brand -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 overflow-hidden border border-quiet-gray/30 group-hover:border-thread-red shadow-2xs group-hover:scale-105 transition-all duration-300">
+          <img src="/images/logo.jpg" alt="Red Thread Logo" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-baseline gap-1.5">
+            <span class="font-serif text-2xl font-bold text-ink tracking-tight group-hover:text-thread-red transition-colors">
+              Red Thread
+            </span>
+            <span class="text-xs font-sans font-light uppercase tracking-wider text-ink-muted">
+              NPC
+            </span>
+          </div>
+          <span class="text-xs text-ink-muted italic font-serif">
+            creative practice for change
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          link.name === 'Services' ? (
+            <div class="relative group/nav">
+              <a
+                href={link.href}
+                class={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 flex items-center gap-1 ${
+                  isActive(link.href)
+                    ? 'text-thread-red font-semibold'
+                    : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                {link.name}
+                <span class="text-[9px] text-ink-muted group-hover/nav:text-thread-red transition-transform duration-200 group-hover/nav:rotate-180">▼</span>
+                {isActive(link.href) && (
+                  <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-thread-red"></span>
+                )}
+              </a>
+              <div class="absolute left-0 top-full pt-2 opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto transition-all duration-200 z-50">
+                <div class="w-64 bg-canvas-pure border border-quiet-gray/30 p-2 shadow-xs space-y-1">
+                  <a href="/services" class="block px-3 py-2 text-xs font-semibold text-ink hover:bg-paper-gray transition-colors border-b border-quiet-gray/15">
+                    All Practices Overview &rarr;
+                  </a>
+                  <a href="/services/coaching-for-change" class="block px-3 py-2 text-xs text-ink-muted hover:text-thread-red hover:bg-paper-gray transition-colors">
+                    <span class="text-[10px] uppercase font-mono text-terracotta block">01</span>
+                    Coaching for Change
+                  </a>
+                  <a href="/services/craftivism-and-creative-practice" class="block px-3 py-2 text-xs text-ink-muted hover:text-thread-red hover:bg-paper-gray transition-colors">
+                    <span class="text-[10px] uppercase font-mono text-terracotta block">02</span>
+                    Craftivism & Art
+                  </a>
+                  <a href="/services/water-governance-consulting" class="block px-3 py-2 text-xs text-ink-muted hover:text-thread-red hover:bg-paper-gray transition-colors">
+                    <span class="text-[10px] uppercase font-mono text-terracotta block">03</span>
+                    Water Governance Consulting
+                  </a>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              class={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${
+                isActive(link.href)
+                  ? 'text-thread-red font-semibold'
+                  : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              {link.name}
+              {isActive(link.href) && (
+                <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-thread-red"></span>
+              )}
+            </a>
+          )
+        ))}
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a
+          href="https://wa.me/27828074342?text=Hello%20Barbara,%20I%20am%20reaching%20out%20via%20the%20Red%20Thread%20website."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="editorial-btn inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300"
+        >
+          <span class="w-1.5 h-1.5 bg-emerald-600"></span>
+          WhatsApp
+        </a>
+        <a
+          href="/contact"
+          class="editorial-btn inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-thread-red hover:bg-thread-crimson border border-thread-red"
+        >
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden items-center gap-2">
+        <a
+          href="https://wa.me/27828074342"
+          class="px-2.5 py-1.5 text-emerald-800 bg-emerald-50 border border-emerald-300 text-xs font-bold"
+          aria-label="WhatsApp"
+        >
+          <span>WA</span>
+        </a>
+        <button
+          type="button"
+          id="mobile-menu-button"
+          class="p-2 text-ink border border-quiet-gray/30 hover:bg-paper-gray focus:outline-hidden"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-canvas/98 backdrop-blur-md border-b border-quiet-gray/20 px-6 pt-4 pb-6 space-y-3">
+    {navLinks.map(link => (
+      link.name === 'Services' ? (
+        <div class="space-y-1">
+          <a
+            href={link.href}
+            class={`block py-2 text-base font-medium px-3 transition-colors ${
+              isActive(link.href)
+                ? 'bg-thread-red/10 text-thread-red font-semibold'
+                : 'text-ink hover:bg-paper-gray'
+            }`}
+          >
+            {link.name}
+          </a>
+          <div class="pl-4 space-y-1 border-l-2 border-quiet-gray/20 ml-3 text-xs">
+            <a href="/services/coaching-for-change" class="block py-1 text-ink-muted hover:text-thread-red">
+              01. Coaching for Change
+            </a>
+            <a href="/services/craftivism-and-creative-practice" class="block py-1 text-ink-muted hover:text-thread-red">
+              02. Craftivism & Art
+            </a>
+            <a href="/services/water-governance-consulting" class="block py-1 text-ink-muted hover:text-thread-red">
+              03. Water Governance
+            </a>
+          </div>
+        </div>
+      ) : (
+        <a
+          href={link.href}
+          class={`block py-2 text-base font-medium px-3 transition-colors ${
+            isActive(link.href)
+              ? 'bg-thread-red/10 text-thread-red font-semibold'
+              : 'text-ink hover:bg-paper-gray'
+          }`}
+        >
+          {link.name}
+        </a>
+      )
+    ))}
+    <div class="pt-4 border-t border-quiet-gray/20 flex flex-col gap-2">
+      <a
+        href="https://wa.me/27828074342?text=Hello%20Barbara,%20I%20am%20reaching%20out%20via%20the%20Red%20Thread%20website."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full text-center py-2.5 px-4 text-xs font-semibold text-emerald-900 bg-emerald-100 border border-emerald-300"
+      >
+        Chat on WhatsApp (+27 82 807 4342)
+      </a>
+      <a
+        href="/contact"
+        class="w-full text-center py-2.5 px-4 text-xs font-semibold uppercase tracking-wider text-white bg-thread-red border border-thread-red"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

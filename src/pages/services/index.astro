@@ -49,9 +49,9 @@ const anchorMap: Record<string, string> = {
       return (
         <article
           id={anchorId}
-          class="scroll-mt-24 p-8 sm:p-12 bg-canvas-pure border border-quiet-gray/20 hover:border-quiet-gray/40 transition-colors"
+          class="scroll-mt-24 p-5 sm:p-8 md:p-12 bg-canvas-pure border border-quiet-gray/20 hover:border-quiet-gray/40 transition-colors"
         >
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
             
             <!-- Image Column -->
             <div class={`lg:col-span-5 ${isEven ? 'lg:order-2' : ''}`}>
@@ -73,31 +73,29 @@ const anchorMap: Record<string, string> = {
                   {svc.data.tagline || `Practice 0${index + 1}`}
                 </span>
                 <span class="text-quiet-gray/40">&bull;</span>
-                <span class="text-xs font-mono uppercase tracking-wider text-ink-muted">
-                  Barbara Schreiner
+                <span class="text-xs text-ink-muted">
+                  Red Thread Practice
                 </span>
               </div>
 
               <h2 class="text-3xl sm:text-4xl font-display-light text-ink">
-                <a href={`/services/${svc.id}`} class="hover:text-thread-red transition-colors">
-                  {svc.data.title}
-                </a>
+                {svc.data.title}
               </h2>
 
-              <p class="text-base text-ink-muted font-light leading-relaxed">
+              <p class="text-sm sm:text-base text-ink-muted leading-relaxed font-light">
                 {svc.data.shortDescription}
               </p>
 
-              <div class="pt-2 flex flex-wrap items-center gap-4">
+              <div class="pt-2 flex flex-col sm:flex-row flex-wrap gap-3">
                 <a
                   href={`/services/${svc.id}`}
-                  class="editorial-btn px-6 py-3 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold border border-ink hover:border-thread-crimson"
+                  class="editorial-btn w-full sm:w-auto px-6 py-3 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold text-center"
                 >
                   Explore Dedicated Practice &rarr;
                 </a>
                 <a
                   href={`/contact?service=${encodeURIComponent(svc.data.title)}#consultation`}
-                  class="editorial-btn px-6 py-3 bg-canvas border border-quiet-gray/30 hover:border-ink text-ink text-xs uppercase tracking-widest font-semibold"
+                  class="editorial-btn w-full sm:w-auto px-6 py-3 bg-canvas border border-quiet-gray/30 hover:border-ink text-ink text-xs uppercase tracking-widest font-semibold text-center"
                 >
                   Initial Consultation
                 </a>

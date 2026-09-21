@@ -60,7 +60,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Tendai Moyo"
-            className="w-full px-4 py-3 text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
+            className="w-full px-4 py-3 text-base sm:text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
           />
         </div>
 
@@ -75,7 +75,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+27 82 000 0000"
-            className="w-full px-4 py-3 text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
+            className="w-full px-4 py-3 text-base sm:text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="you@domain.org"
-            className="w-full px-4 py-3 text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
+            className="w-full px-4 py-3 text-base sm:text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
           />
         </div>
 
@@ -104,7 +104,7 @@ export default function ContactForm() {
             id="service"
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
+            className="w-full px-4 py-3 text-base sm:text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink"
           >
             <option value="Coaching for Change">Coaching for Change (Individual / Team)</option>
             <option value="15-Minute Exploration Conversation">15-Minute Exploration Conversation</option>
@@ -126,7 +126,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Tell Barbara about what you are seeking or navigating right now..."
-          className="w-full px-4 py-3 text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink resize-y"
+          className="w-full px-4 py-3 text-base sm:text-sm bg-canvas-pure border border-quiet-gray/30 rounded-none focus:border-ink focus:ring-1 focus:ring-ink outline-hidden transition-colors text-ink resize-y"
         ></textarea>
       </div>
 

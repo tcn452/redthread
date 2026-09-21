@@ -31,24 +31,24 @@ const sortedPosts = posts.sort((a, b) => new Date(b.data.publishedDate).getTime(
       </p>
 
       <!-- Action Controls (Refero Architectural Style) -->
-      <div class="reveal delay-300 flex flex-wrap items-center gap-4 pt-4">
+      <div class="reveal delay-300 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-4">
         <a
           href="/services"
-          class="editorial-btn px-8 py-3.5 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold"
+          class="editorial-btn w-full sm:w-auto px-7 py-3.5 bg-ink hover:bg-thread-crimson text-white text-xs uppercase tracking-widest font-semibold text-center"
         >
           Explore Our Practices
         </a>
         <a
           href="/contact#consultation"
-          class="editorial-btn px-8 py-3.5 bg-canvas-pure hover:bg-paper-gray text-ink border border-quiet-gray/30 text-xs uppercase tracking-widest font-semibold"
+          class="editorial-btn w-full sm:w-auto px-7 py-3.5 bg-canvas-pure hover:bg-paper-gray text-ink border border-quiet-gray/30 text-xs uppercase tracking-widest font-semibold text-center"
         >
-          Schedule an Initial Consultation
+          Schedule a Consultation
         </a>
         <a
           href="https://wa.me/27828074342"
           target="_blank"
           rel="noopener noreferrer"
-          class="editorial-btn px-6 py-3.5 text-emerald-900 hover:text-emerald-950 text-xs font-medium flex items-center gap-2 border border-emerald-300 bg-emerald-50/60"
+          class="editorial-btn w-full sm:w-auto px-6 py-3.5 text-emerald-900 hover:text-emerald-950 text-xs font-medium flex items-center justify-center gap-2 border border-emerald-300 bg-emerald-50/60 text-center"
         >
           <span class="w-1.5 h-1.5 bg-emerald-600"></span>
           WhatsApp Barbara Directly
@@ -57,35 +57,35 @@ const sortedPosts = posts.sort((a, b) => new Date(b.data.publishedDate).getTime(
     </div>
 
     <!-- Concrete Credentials Row (Refero Editorial Style) -->
-    <div class="reveal delay-400 mt-20 pt-8 border-t border-quiet-gray/20 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="reveal delay-400 mt-16 sm:mt-20 pt-8 border-t border-quiet-gray/20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
       <div>
-        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">30+</span>
-        <span class="text-xs uppercase tracking-wider text-ink-muted">Years in Policy & Governance</span>
+        <span class="block text-2xl sm:text-4xl font-display text-ink font-semibold">30+</span>
+        <span class="text-[11px] sm:text-xs uppercase tracking-wider text-ink-muted">Years in Policy & Governance</span>
       </div>
       <div>
-        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">DWAF & WIN</span>
-        <span class="text-xs uppercase tracking-wider text-ink-muted">Senior Executive Leadership</span>
+        <span class="block text-2xl sm:text-4xl font-display text-ink font-semibold">DWAF & WIN</span>
+        <span class="text-[11px] sm:text-xs uppercase tracking-wider text-ink-muted">Senior Leadership</span>
       </div>
       <div>
-        <span class="block text-3xl sm:text-4xl font-display text-ink font-semibold">6</span>
-        <span class="text-xs uppercase tracking-wider text-ink-muted">Published Books & Works</span>
+        <span class="block text-2xl sm:text-4xl font-display text-ink font-semibold">6</span>
+        <span class="text-[11px] sm:text-xs uppercase tracking-wider text-ink-muted">Published Works</span>
       </div>
       <div>
-        <span class="block text-3xl sm:text-4xl font-display text-thread-red font-semibold">Arpilleras</span>
-        <span class="text-xs uppercase tracking-wider text-ink-muted">Textile Craftivism & Testimony</span>
+        <span class="block text-2xl sm:text-4xl font-display text-thread-red font-semibold">Arpilleras</span>
+        <span class="text-[11px] sm:text-xs uppercase tracking-wider text-ink-muted">Textile Craftivism</span>
       </div>
     </div>
   </section>
 
   <!-- Visual Feature: Raw Portfolio Crop with Zoom Animation (Refero style) -->
-  <section class="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    <div class="group relative w-full aspect-[21/9] sm:aspect-[24/10] overflow-hidden bg-canvas-pure border border-quiet-gray/20">
+  <section class="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+    <div class="group relative w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/10] overflow-hidden bg-canvas-pure border border-quiet-gray/20">
       <img
         src="/images/women-of-gaza.jpg"
         alt="Women of Gaza textile arpillera art piece by Barbara Schreiner"
         class="w-full h-full object-cover object-center filter saturate-[0.95] hover-img-zoom group-hover:scale-[1.03]"
       />
-      <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:bottom-6 bg-canvas/95 backdrop-blur-xs py-2 px-4 max-w-md border border-quiet-gray/20 text-xs text-ink">
+      <div class="absolute bottom-3 left-3 right-3 sm:left-6 sm:bottom-6 bg-canvas/95 backdrop-blur-xs py-2 px-3 sm:px-4 max-w-md border border-quiet-gray/20 text-xs text-ink">
         <span class="font-semibold text-thread-red uppercase tracking-wider block text-[10px]">Textile Craftivism in Practice</span>
         <span class="italic font-serif">&ldquo;Women of Gaza&rdquo;</span> &mdash; Arpillera tradition of cloth, needle, and testimony by Barbara Schreiner.
       </div>

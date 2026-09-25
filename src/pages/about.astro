@@ -8,6 +8,7 @@ const personSchema = {
   "name": "Barbara Schreiner",
   "jobTitle": "Founder & Executive Director, Red Thread NPC",
   "description": "Writer, transformational coach, textile artist, and senior water governance advisor with over 30 years of public policy leadership in South Africa and internationally.",
+  "image": `${siteUrl}/images/consulting-conference-1.webp`,
   "url": new URL(Astro.url.pathname, siteUrl).toString(),
   "worksFor": {
     "@type": "NGO",
@@ -47,17 +48,26 @@ const personSchema = {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       <!-- Portrait & Quick Facts -->
       <div class="reveal lg:col-span-5 space-y-8 lg:sticky lg:top-28">
-        <div class="aspect-[3/4] w-full border border-quiet-gray/20 bg-paper-gray flex flex-col justify-between p-8 sm:p-10">
-          <img
-            src="/images/logo.webp"
-            width="1024"
-            height="1024"
-            alt="Red Thread mark"
-            class="w-24 h-24 object-contain border border-quiet-gray/30 bg-canvas-pure"
-          />
-          <div class="space-y-3">
-            <p class="font-display-italic text-4xl text-ink">Barbara Schreiner</p>
-            <p class="text-xs font-semibold uppercase tracking-widest text-terracotta">Founder & Executive Director</p>
+        <div class="space-y-4">
+          <figure class="group relative w-full overflow-hidden bg-paper-gray border border-quiet-gray/20">
+            <img
+              src="/images/consulting-conference-1.webp"
+              width="1600"
+              height="1065"
+              alt="Barbara Schreiner at an international water governance conference"
+              fetchpriority="high"
+              decoding="async"
+              class="w-full h-auto object-cover hover-img-zoom group-hover:scale-[1.03] transition-transform duration-700"
+            />
+            <figcaption class="absolute bottom-0 inset-x-0 bg-ink/90 backdrop-blur-sm px-4 py-2.5 text-white text-[10px] uppercase tracking-wider font-semibold flex items-center justify-between">
+              <span>Barbara Schreiner</span>
+              <span class="font-mono text-white/60">International Water Governance</span>
+            </figcaption>
+          </figure>
+          <div class="p-4 bg-paper-gray/40 border border-quiet-gray/20 text-xs text-ink-muted space-y-1">
+            <div class="font-serif font-bold text-ink text-sm">Barbara Schreiner</div>
+            <div class="text-[11px] text-terracotta font-medium uppercase tracking-wider">Founder & Executive Director</div>
+            <div class="text-[11px] text-ink-muted/80">Author · Transformational Coach · Water Governance Expert · Arpillera Artist</div>
           </div>
         </div>
 
@@ -70,7 +80,15 @@ const personSchema = {
             </li>
             <li class="flex items-start gap-2">
               <span class="text-thread-red font-bold">›</span>
+              <span><strong>Directors:</strong> Frank Meintjies & Sheila Tyeku.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-thread-red font-bold">›</span>
               <span><strong>Government Experience:</strong> Former Deputy Director General at South Africa's Department of Water Affairs & Forestry.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-thread-red font-bold">›</span>
+              <span><strong>Board & Advisory:</strong> IWMI, iSimangaliso World Heritage Park, Sanitation and Water for All.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-thread-red font-bold">›</span>
@@ -208,6 +226,25 @@ const personSchema = {
       </p>
     </div>
 
+    <!-- Board & Advisory Appointments -->
+    <div class="mb-12 p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20">
+      <h3 class="font-serif text-lg font-semibold text-ink mb-4">Board & Advisory Experience</h3>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-ink-muted font-light">
+        <li class="flex items-start gap-2">
+          <span class="text-thread-red font-bold">›</span>
+          <span><strong>International Water Management Institute (IWMI)</strong> — board and advisory roles.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-thread-red font-bold">›</span>
+          <span><strong>iSimangaliso World Heritage Park</strong> — governance and advisory contribution.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-thread-red font-bold">›</span>
+          <span><strong>Sanitation and Water for All (SWA)</strong> — partnership and advisory engagement.</span>
+        </li>
+      </ul>
+    </div>
+
     <!-- Timeline / Roles Grid -->
     <div class="space-y-6">
       <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
@@ -218,6 +255,18 @@ const personSchema = {
           <h4 class="font-serif text-xl font-medium text-ink">Executive Director &bull; Water Integrity Network (WIN)</h4>
           <p class="text-xs text-ink-muted leading-relaxed font-light">
             Leading an international NGO operating across 7+ countries championing anti-corruption, financial transparency, and integrity systems in water and sanitation.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
+        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
+          Board & Advisory
+        </div>
+        <div class="md:col-span-9 space-y-1">
+          <h4 class="font-serif text-xl font-medium text-ink">IWMI, iSimangaliso World Heritage Park &amp; Sanitation and Water for All</h4>
+          <p class="text-xs text-ink-muted leading-relaxed font-light">
+            Board and advisory appointments spanning international water research, world-heritage conservation governance, and the global Sanitation and Water for All partnership.
           </p>
         </div>
       </div>
@@ -302,6 +351,22 @@ const personSchema = {
           <span class="font-semibold text-ink text-sm block">Water Pricing: The Case of South Africa (2015)</span>
           <p>Schreiner, B. In A. Dinar et al. (eds), <em>Water Pricing Experiences and Innovations</em>, Springer.</p>
         </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-canvas-pure border border-quiet-gray/20">
+        <h3 class="font-serif text-lg text-ink font-semibold mb-2">More Writing</h3>
+        <p class="text-sm text-ink-muted font-light leading-relaxed mb-3">
+          Barbara maintains a wider archive of essays, poetry, and reflections on her personal blog.
+        </p>
+        <a
+          href="https://barbaraschreinerblog.wordpress.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-semibold uppercase tracking-wider text-thread-red hover:text-thread-crimson inline-flex items-center gap-1"
+        >
+          <span>Visit Barbara Schreiner's Blog</span>
+          <span>&rarr;</span>
+        </a>
       </div>
     </div>
   </section>

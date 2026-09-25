@@ -496,22 +496,28 @@ const sortedPosts = posts.sort((a, b) => new Date(b.data.publishedDate).getTime(
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Identity column: the mark, not a portrait. A photograph of Barbara is not on file. -->
+        <!-- Portrait Column -->
         <div class="reveal lg:col-span-5">
-          <div class="relative max-w-md mx-auto border border-quiet-gray/25 bg-paper-gray">
-            <div class="aspect-[3/4] flex flex-col justify-between p-8 sm:p-10">
+          <div class="relative max-w-md mx-auto">
+            <figure class="group relative w-full overflow-hidden bg-paper-gray border border-quiet-gray/25">
               <img
-                src="/images/logo.webp"
-                width="1024"
-                height="1024"
-                alt="Red Thread mark"
-                class="w-24 h-24 object-contain border border-quiet-gray/30 bg-canvas-pure"
+                src="/images/consulting-conference-1.webp"
+                width="1600"
+                height="1065"
+                alt="Barbara Schreiner at an international water governance conference"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto object-cover hover-img-zoom group-hover:scale-[1.03] transition-transform duration-700"
               />
-              <div class="space-y-3">
-                <p class="font-display-italic text-4xl sm:text-5xl text-ink">Barbara Schreiner</p>
-                <p class="text-xs font-semibold uppercase tracking-widest text-terracotta">Founder & Executive Director</p>
-                <p class="text-sm text-ink-muted font-light leading-relaxed">Author, transformational coach, water governance advisor, and arpillera artist.</p>
-              </div>
+              <figcaption class="absolute bottom-0 inset-x-0 bg-ink/90 backdrop-blur-sm px-4 py-2.5 text-white text-[10px] uppercase tracking-wider font-semibold flex items-center justify-between">
+                <span>Barbara Schreiner</span>
+                <span class="font-mono text-white/60">International Water Governance</span>
+              </figcaption>
+            </figure>
+            <div class="mt-4 p-4 bg-paper-gray/40 border border-quiet-gray/20 text-xs text-ink-muted space-y-1">
+              <div class="font-serif font-bold text-ink text-sm">Barbara Schreiner</div>
+              <div class="text-[11px] text-terracotta font-medium uppercase tracking-wider">Founder & Executive Director</div>
+              <div class="text-[11px] text-ink-muted/80">Author · Transformational Coach · Water Governance Expert · Arpillera Artist</div>
             </div>
           </div>
         </div>

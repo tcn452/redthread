@@ -101,16 +101,6 @@
   line-height: 1.05;
 }
 
-/* Leadership timeline: active dot state (toggled by inline script) */
-.leadership-dot .dot-marker.is-active {
-  transform: scale(1.4);
-  border-color: var(--color-thread-red);
-  box-shadow: 0 0 0 5px rgba(187, 3, 15, 0.16);
-}
-.leadership-dot[aria-expanded="true"] > span:first-child {
-  color: var(--color-thread-red);
-}
-
 /* Architectural gallery framing without bulky shadows (Refero style) */
 .gallery-crop {
   border-radius: 0px;

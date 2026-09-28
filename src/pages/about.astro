@@ -8,7 +8,7 @@ const personSchema = {
   "name": "Barbara Schreiner",
   "jobTitle": "Founder & Executive Director, Red Thread NPC",
   "description": "Writer, transformational coach, textile artist, and senior water governance advisor with over 30 years of public policy leadership in South Africa and internationally.",
-  "image": `${siteUrl}/images/consulting-conference-1.webp`,
+  "image": `${siteUrl}/images/conference-bali-panel.webp`,
   "url": new URL(Astro.url.pathname, siteUrl).toString(),
   "worksFor": {
     "@type": "NGO",
@@ -51,23 +51,32 @@ const personSchema = {
         <div class="space-y-4">
           <figure class="group relative w-full overflow-hidden bg-paper-gray border border-quiet-gray/20">
             <img
-              src="/images/consulting-conference-1.webp"
-              width="1600"
-              height="1065"
-              alt="Barbara Schreiner at an international water governance conference"
+              src="/images/conference-bali-panel.webp"
+              width="1800"
+              height="1350"
+              alt="Barbara Schreiner speaking on a panel at the 10th World Water Forum, Bali 2024"
               fetchpriority="high"
               decoding="async"
               class="w-full h-auto object-cover hover-img-zoom group-hover:scale-[1.03] transition-transform duration-700"
             />
             <figcaption class="absolute bottom-0 inset-x-0 bg-ink/90 backdrop-blur-sm px-4 py-2.5 text-white text-[10px] uppercase tracking-wider font-semibold flex items-center justify-between">
               <span>Barbara Schreiner</span>
-              <span class="font-mono text-white/60">International Water Governance</span>
+              <span class="font-mono text-white/60">10th World Water Forum, Bali 2024</span>
             </figcaption>
           </figure>
           <div class="p-4 bg-paper-gray/40 border border-quiet-gray/20 text-xs text-ink-muted space-y-1">
             <div class="font-serif font-bold text-ink text-sm">Barbara Schreiner</div>
             <div class="text-[11px] text-terracotta font-medium uppercase tracking-wider">Founder & Executive Director</div>
             <div class="text-[11px] text-ink-muted/80">Author · Transformational Coach · Water Governance Expert · Arpillera Artist</div>
+            <a
+              href="https://www.linkedin.com/in/barbara-schreiner-23a8b512/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-[#0A66C2] hover:text-[#004182] font-semibold pt-1"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+              <span>Connect on LinkedIn</span>
+            </a>
           </div>
         </div>
 
@@ -80,15 +89,7 @@ const personSchema = {
             </li>
             <li class="flex items-start gap-2">
               <span class="text-thread-red font-bold">›</span>
-              <span><strong>Directors:</strong> Frank Meintjies & Sheila Tyeku.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-thread-red font-bold">›</span>
-              <span><strong>Government Experience:</strong> Former Deputy Director General at South Africa's Department of Water Affairs & Forestry.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-thread-red font-bold">›</span>
-              <span><strong>Board & Advisory:</strong> IWMI, iSimangaliso World Heritage Park, Sanitation and Water for All.</span>
+              <span><strong>Leadership & Boards:</strong> 30+ years across government, consulting, and international water governance boards — <a href="#leadership" class="text-thread-red hover:underline">see full record below</a>.</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-thread-red font-bold">›</span>
@@ -97,6 +98,10 @@ const personSchema = {
             <li class="flex items-start gap-2">
               <span class="text-thread-red font-bold">›</span>
               <span><strong>Education:</strong> MPhil in Environmental Science (Distinction, UCT), MA (Lancaster, UK), BA Hons (Natal).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-thread-red font-bold">›</span>
+              <span><strong>Governance:</strong> Red Thread NPC is guided by two additional directors — <a href="#directors" class="text-thread-red hover:underline">see our Directors below</a>.</span>
             </li>
           </ul>
         </div>
@@ -110,7 +115,7 @@ const personSchema = {
           </p>
 
           <p>
-            For over thirty years I’ve worked in water &mdash; as <strong>Deputy Director General at South Africa’s Department of Water Affairs</strong>, and more recently as <strong>Executive Director of the Water Integrity Network (WIN)</strong>, an international NGO working globally on water and sanitation governance, anti-corruption, and integrity.
+            For over thirty years I’ve worked in water &mdash; as <strong>Advisor to three Ministers of Water Affairs and Forestry</strong> in South Africa, as <strong>Deputy Director General at South Africa’s Department of Water Affairs</strong>, and in independent consulting as Senior Consultant and Practice Director at Pegasys Strategy and Development and later Executive Director of the Pegasys Institute, advising governments, utilities, and development partners across Africa on water governance, institutional reform, and policy design. More recently I've served as <strong>Executive Director of the Water Integrity Network (WIN)</strong>, an international NGO working globally on water and sanitation governance, anti-corruption, and integrity.
           </p>
 
           <p>
@@ -128,6 +133,18 @@ const personSchema = {
           <p>
             My textile art draws on the <strong>arpillera tradition</strong> &mdash; using cloth and thread to tell stories of injustice, discrimination, trauma, and resistance. Objects become arguments and evidence, inviting viewers to confront what official narratives leave unaddressed.
           </p>
+
+          <figure class="group relative w-full max-w-sm overflow-hidden bg-paper-gray border border-quiet-gray/20 my-6">
+            <img
+              src="/images/portrait-forest.webp"
+              width="1125"
+              height="1500"
+              loading="lazy"
+              decoding="async"
+              alt="Barbara Schreiner outdoors"
+              class="w-full h-auto object-cover hover-img-zoom group-hover:scale-[1.03] transition-transform duration-700"
+            />
+          </figure>
 
           <p>
             More recently, I trained as a coach and counsellor, because thirty years of watching capable people burn out or lose their way convinced me that leadership and institutions are only ever as good as the people inside them, and those people need somewhere to reflect and grow.
@@ -215,106 +232,87 @@ const personSchema = {
   </section>
 
   <!-- Professional CV & Career Timeline Integration -->
-  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="leadership" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mb-16 space-y-4">
       <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Leadership & Governance</span>
       <h2 class="text-3xl sm:text-5xl font-display-light text-ink">
-        Professional leadership <span class="font-display-italic text-thread-red">track record</span>.
+        Board & leadership <span class="font-display-italic text-thread-red">experience</span>.
       </h2>
       <p class="text-sm text-ink-muted font-light leading-relaxed">
-        Key appointments, advisory committees, and public sector leadership spanning South Africa, the SADC region, and international governance bodies.
+        Executive roles, board appointments, and advisory committees spanning South Africa, the SADC region, and international governance bodies. Drawn from Barbara's full CV.
       </p>
     </div>
 
-    <!-- Board & Advisory Appointments -->
-    <div class="mb-12 p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20">
-      <h3 class="font-serif text-lg font-semibold text-ink mb-4">Board & Advisory Experience</h3>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-ink-muted font-light">
-        <li class="flex items-start gap-2">
-          <span class="text-thread-red font-bold">›</span>
-          <span><strong>International Water Management Institute (IWMI)</strong> — board and advisory roles.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-thread-red font-bold">›</span>
-          <span><strong>iSimangaliso World Heritage Park</strong> — governance and advisory contribution.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-thread-red font-bold">›</span>
-          <span><strong>Sanitation and Water for All (SWA)</strong> — partnership and advisory engagement.</span>
-        </li>
-      </ul>
+    <!-- Single Consolidated List -->
+    <div class="bg-canvas-pure border border-quiet-gray/20 divide-y divide-quiet-gray/15">
+      {[
+        { period: "2019 – present", role: "Executive Director, Water Integrity Network (WIN); Independent Consultant" },
+        { period: "2023 – present", role: "Steering Committee, End Water Poverty" },
+        { period: "2022 – present", role: "Steering Committee, Open Government Partnership" },
+        { period: "2022 – 2025", role: "Member, National Anti-Corruption Advisory Committee, South Africa" },
+        { period: "2019 – present", role: "Sanitation and Water for All — Chair, Finance & Governance Sub-Committee; member, Executive Oversight Committee & Steering Committee" },
+        { period: "2019 – present", role: "Steering Committee, OECD Water Governance Initiative" },
+        { period: "2019 – 2021", role: "Member, Committee of Experts to the Minister of Human Settlements, Water and Sanitation, South Africa" },
+        { period: "2015 – 2018", role: "Chairperson, Water Research Commission of South Africa" },
+        { period: "2013 – 2018", role: "Executive Director, Pegasys Institute" },
+        { period: "2007 – 2018", role: "Senior Consultant & Practice Director, Pegasys Strategy and Development" },
+        { period: "2002 – 2007", role: "Deputy Director-General: Policy & Regulation, South Africa Department of Water Affairs and Forestry" },
+        { period: "1998 – 2002", role: "Chief Director: Water Use & Conservation, South Africa Department of Water Affairs and Forestry" },
+        { period: "1995 – 1998", role: "Advisor to the Minister of Water Affairs and Forestry, South Africa" },
+        { period: "1995", role: "Head of Environmental Unit, Gauteng Provincial Government" },
+        { period: "Former appointment", role: "Board and advisory roles, International Water Management Institute (IWMI)" },
+        { period: "Former appointment", role: "Governance and advisory contribution, iSimangaliso World Heritage Park" },
+      ].map((item) => (
+        <div class="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 items-baseline">
+          <div class="sm:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
+            {item.period}
+          </div>
+          <div class="sm:col-span-9 text-sm text-ink-muted font-light leading-relaxed">
+            {item.role}
+          </div>
+        </div>
+      ))}
     </div>
+  </section>
 
-    <!-- Timeline / Roles Grid -->
-    <div class="space-y-6">
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          2019 &ndash; Present
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">Executive Director &bull; Water Integrity Network (WIN)</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            Leading an international NGO operating across 7+ countries championing anti-corruption, financial transparency, and integrity systems in water and sanitation.
-          </p>
-        </div>
+  <!-- Directors -->
+  <section id="directors" class="py-24 bg-canvas-pure border-y border-quiet-gray/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-14 space-y-4">
+        <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">Governance</span>
+        <h2 class="text-3xl sm:text-5xl font-display-light text-ink">
+          Directors of <span class="font-display-italic text-thread-red">Red Thread</span>.
+        </h2>
       </div>
 
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          Board & Advisory
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">IWMI, iSimangaliso World Heritage Park &amp; Sanitation and Water for All</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            Board and advisory appointments spanning international water research, world-heritage conservation governance, and the global Sanitation and Water for All partnership.
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 bg-canvas border border-quiet-gray/20 space-y-4">
+          <div class="flex items-center gap-3 pb-4 border-b border-quiet-gray/15">
+            <div class="w-12 h-12 bg-paper-gray border border-quiet-gray/30 flex items-center justify-center font-serif text-xl font-semibold text-ink">
+              FM
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-ink">Frank Meintjies</h3>
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta">Director</span>
+            </div>
+          </div>
+          <p class="text-sm text-ink-muted font-light leading-relaxed">
+            Director of Red Thread NPC, contributing governance oversight and strategic direction to the organisation's work in water integrity, coaching, and creative practice.
           </p>
         </div>
-      </div>
 
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          2022 &ndash; 2025
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">Member &bull; National Anti-Corruption Advisory Committee (NACAC), South Africa</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            Appointed to advise the President and government on national anti-corruption strategy, integrity architecture, and whistleblower protection.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          2019 &ndash; Present
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">Steering Committee &bull; OECD Water Governance Initiative & Open Government Partnership</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            International multi-stakeholder governance advising on international benchmarks, public participation, and transparency mechanisms in natural resource management.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          2002 &ndash; 2007
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">Deputy Director General: Policy & Regulation &bull; Department of Water Affairs, South Africa</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            Oversaw the post-apartheid transformation of South African water policy and legislation, pricing strategy, compulsory licensing, and equitable access frameworks.
-          </p>
-        </div>
-      </div>
-
-      <div class="p-6 sm:p-8 bg-canvas-pure border border-quiet-gray/20 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline">
-        <div class="md:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-          2015 &ndash; 2018
-        </div>
-        <div class="md:col-span-9 space-y-1">
-          <h4 class="font-serif text-xl font-medium text-ink">Chairperson of the Board &bull; Water Research Commission of South Africa</h4>
-          <p class="text-xs text-ink-muted leading-relaxed font-light">
-            Strategic stewardship of South Africa's premier national water knowledge, research funding, and innovation institution.
+        <div class="p-8 bg-canvas border border-quiet-gray/20 space-y-4">
+          <div class="flex items-center gap-3 pb-4 border-b border-quiet-gray/15">
+            <div class="w-12 h-12 bg-paper-gray border border-quiet-gray/30 flex items-center justify-center font-serif text-xl font-semibold text-ink">
+              ST
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-ink">Sheila Tyeku</h3>
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta">Director</span>
+            </div>
+          </div>
+          <p class="text-sm text-ink-muted font-light leading-relaxed">
+            Director of Red Thread NPC, supporting governance, accountability, and the organisation's mission to turn testimony into transformation.
           </p>
         </div>
       </div>
@@ -358,15 +356,27 @@ const personSchema = {
         <p class="text-sm text-ink-muted font-light leading-relaxed mb-3">
           Barbara maintains a wider archive of essays, poetry, and reflections on her personal blog.
         </p>
-        <a
-          href="https://barbaraschreinerblog.wordpress.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-xs font-semibold uppercase tracking-wider text-thread-red hover:text-thread-crimson inline-flex items-center gap-1"
-        >
-          <span>Visit Barbara Schreiner's Blog</span>
-          <span>&rarr;</span>
-        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          <a
+            href="https://barbaraschreinerblog.wordpress.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs font-semibold uppercase tracking-wider text-thread-red hover:text-thread-crimson inline-flex items-center gap-1"
+          >
+            <span>Visit Barbara Schreiner's Blog</span>
+            <span>&rarr;</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/barbara-schreiner-23a8b512/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs font-semibold uppercase tracking-wider text-[#0A66C2] hover:text-[#004182] inline-flex items-center gap-1.5"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+            <span>Connect on LinkedIn</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

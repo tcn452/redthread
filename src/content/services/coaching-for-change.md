@@ -2,36 +2,41 @@
 title: "Coaching for Change"
 order: 1
 tagline: "Practice 01"
-shortDescription: "Transformational leadership coaching for executives, senior public servants, activists, and teams navigating high-stakes transition and burnout."
-coverImage: "/images/individual-coaching.webp"
+shortDescription: "Transformational coaching for leaders, professionals, and teams navigating high-stakes transition, burnout, and personal growth."
+coverImage: "/images/portrait-closeup.webp"
 ---
 
-Leadership can be lonely, particularly when you are driving structural change, steering an institution through crisis, or carrying heavy public responsibilities. When organizations face profound change, the pressure on individual leaders often leads to exhaustion, isolation, and loss of perspective.
+Leadership can be lonely, particularly when you are driving structural change, steering an institution through crisis, or carrying heavy public responsibilities. When organisations face profound change, the pressure on individual leaders often leads to exhaustion, isolation, and loss of perspective.
 
-Barbara Schreiner brings a rare combination to executive and transformational coaching: formal coaching expertise alongside thirty years of senior leadership experience at national and international levels. Having served as Deputy Director General in government and Executive Director of international non-profits, Barbara understands the political, organizational, and emotional realities of high-responsibility roles from the inside out.
+Barbara Schreiner brings a rare combination to coaching: formal coaching expertise alongside thirty years of senior leadership experience at national and international levels. Having served in senior management in government, as the head of an international non-profit, as Ministerial Advisor, and on a number of international boards, she understands high-responsibility roles from the inside — but she works just as closely with people early in their careers or navigating a pivotal transition, wherever they are on that path. Whether you're just starting out, navigating the messy middle of a career, or carrying the weight of senior leadership, the challenges are the same at their core: finding your voice, clarifying your intention, and working out how to get where you actually want to go — whether that's a life goal or a professional one.
 
 ---
 
-## 1-on-1 Transformational Coaching
+## 1-on-1 Coaching
 
-Individual coaching sessions provide a reflective, rigorous, and completely confidential space to step back from day-to-day crises and address the deeper dynamics of your leadership:
+Individual coaching sessions provide a reflective, rigorous, and completely confidential space to step back and address what's really driving your decisions and your direction:
 
-- **Navigating High-Stakes Transitions**: Stepping into new leadership roles, executing major organizational pivots, or managing complex stakeholder environments with composure and strategic clarity.
-- **Preventing & Healing Executive Burnout**: Cultivating resilience, recognizing the physiological and cognitive warning signs of depletion, and re-establishing sustainable personal and professional boundaries.
-- **Strategic Decision-Making Under Pressure**: Disentangling urgent operational demands from high-impact structural priorities, and building confidence in tough institutional choices.
-- **Values-Aligned Leadership**: Reconnecting your day-to-day authority with your core ethical convictions and personal integrity.
+- **Finding Your Voice & Intention**: Getting clear on what you actually want — in your life, your career, or both — and building the confidence to act on it.
+- **Navigating Transitions**: Whether it's a first leadership role, a career pivot, a return to work, or a major organisational shift, moving through change with clarity rather than just reacting to it.
+- **Preventing & Healing Burnout**: Cultivating resilience, recognising the warning signs of depletion, and re-establishing sustainable boundaries.
+- **Strategic Decision-Making Under Pressure**: Disentangling urgent demands from what really matters, and building confidence in hard choices.
+- **Values-Aligned Living & Leadership**: Reconnecting your daily choices and responsibilities with your core convictions and sense of integrity.
 
 Sessions are held in person across South Africa or globally via video conference (Zoom, Google Meet, Teams) or direct WhatsApp.
 
 ---
 
-## Team & Group Coaching for Organizational Change
+## Group Coaching
 
-When an organization undergoes structural restructuring, leadership transitions, or cultural friction, individual strain quickly multiplies across teams. 
+For those who want the depth of coaching alongside the insight and support of a peer group, group sessions offer a space to work through similar questions — finding direction, building confidence, navigating change — together with others facing comparable challenges.
 
-Team coaching focuses on rebuilding cohesion, alignment, and relational trust:
+---
 
-- **Leadership Succession & Restructuring**: Supporting incoming and outgoing leaders and their senior management teams during critical handovers.
+## Team Coaching for Organisational Change
+
+When an organisation undergoes restructuring, leadership transitions, or cultural friction, individual strain quickly multiplies across teams. Team coaching builds the skills and capacity teams need to work together better:
+
+- **Leadership Succession & Restructuring**: Supporting incoming and outgoing leaders and their teams during critical handovers.
 - **Breaking Institutional Silos**: Aligning divergent departments around a shared mission and practical working agreements.
 - **Fostering Honest Communication**: Creating spaces for teams to air unaddressed conflicts, clarify mutual expectations, and replace defensive habits with collaborative accountability.
 

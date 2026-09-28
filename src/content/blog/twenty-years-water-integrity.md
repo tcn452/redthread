@@ -4,7 +4,7 @@ publishedDate: "2024-06-20"
 author: "Barbara Schreiner"
 category: "governance"
 excerpt: "Two decades of work on integrity in the water sector have shown that corruption is not a side issue — it is a direct cause of failed services, inequality, and lost trust."
-coverImage: "/images/consulting-conference-1.webp"
+coverImage: "/images/blog-twenty-years-integrity-cover.webp"
 readTime: "6 min read"
 ---
 

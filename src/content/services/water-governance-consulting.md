@@ -3,7 +3,7 @@ title: "Water and Sanitation Governance & Integrity Consulting"
 order: 3
 tagline: "Practice 03"
 shortDescription: "More than 30 years of water resources management, water and sanitation governance, and anti-corruption advisory across Africa and globally."
-coverImage: "/images/consulting-conference-1.webp"
+coverImage: "/images/conference-uzbekistan.webp"
 ---
 
 Barbara Schreiner brings more than 30 years of experience in water resources management, water and sanitation governance, and anti-corruption to consulting engagements across Africa and globally. Her career spans senior government leadership — including as Deputy Director-General of Policy and Regulation in South Africa's Department of Water Affairs and Forestry, and as advisor to three Ministers of Water — alongside 15+ years as a consultant and 8 years as Executive Director of the Water Integrity Network. This combination gives her a rare vantage point: she understands not only how policy should be designed, but how it is actually negotiated, resourced, and implemented inside government systems.

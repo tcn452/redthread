@@ -109,6 +109,13 @@
 }
 
 /* Editorial interactive button (crisp, architectural, non-pill) */
+/* Keep buttons inside prose blocks from inheriting link underlines / colours */
+.prose a.editorial-btn,
+.prose a.editorial-btn:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .editorial-btn {
   display: inline-flex;
   align-items: center;

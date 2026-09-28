@@ -4,7 +4,7 @@ publishedDate: "2024-03-08"
 author: "Barbara Schreiner"
 category: "governance"
 excerpt: "Blended finance is often presented as a silver bullet for water and sanitation funding. This article explores where it helps, where it risks distorting priorities, and what integrity demands."
-coverImage: "/images/water-governance.webp"
+coverImage: "/images/blog-blended-finance-mural.webp"
 readTime: "7 min read"
 ---
 

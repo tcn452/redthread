@@ -243,12 +243,10 @@ const personSchema = {
       </p>
     </div>
 
-    <!-- Vertical Timeline -->
-    <div class="relative pl-8 sm:pl-12">
-      <div class="absolute left-[6px] sm:left-[10px] top-2 bottom-2 w-px bg-gradient-to-b from-thread-red via-terracotta/40 to-quiet-gray/15"></div>
-
-      <div class="space-y-9 sm:space-y-10">
-        {[
+    <!-- Horizontal Expandable Timeline -->
+    <div id="leadership-timeline" data-leadership-timeline>
+      {(() => {
+        const items = [
           { period: "2019 – present", role: "Executive Director, Water Integrity Network (WIN); Independent Consultant", category: "Executive", current: true },
           { period: "2023 – present", role: "Steering Committee, End Water Poverty", category: "Board & Advisory", current: true },
           { period: "2022 – present", role: "Steering Committee, Open Government Partnership", category: "Board & Advisory", current: true },
@@ -265,35 +263,120 @@ const personSchema = {
           { period: "1995", role: "Head of Environmental Unit, Gauteng Provincial Government", category: "Government", current: false },
           { period: "Former appointment", role: "Board and advisory roles, International Water Management Institute (IWMI)", category: "Board & Advisory", current: false },
           { period: "Former appointment", role: "Governance and advisory contribution, iSimangaliso World Heritage Park", category: "Board & Advisory", current: false },
-        ].map((item) => (
-          <div class="relative group">
-            <span
-              class:list={[
-                "absolute -left-8 sm:-left-12 top-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-2 transition-all duration-200 group-hover:scale-125",
-                item.current
-                  ? "bg-thread-red border-thread-red shadow-[0_0_0_4px_rgba(196,60,44,0.12)]"
-                  : "bg-canvas border-quiet-gray/40 group-hover:border-thread-red",
-              ]}
-            ></span>
-            <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-1">
-              <span class="text-xs font-semibold uppercase tracking-wider text-thread-red">{item.period}</span>
-              {item.current && (
-                <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded-full">
-                  Ongoing
-                </span>
-              )}
-              <span class="text-[9px] font-semibold uppercase tracking-wider text-ink-muted/60">
-                &bull; {item.category}
-              </span>
+        ];
+
+        return (
+          <Fragment>
+            {/* Desktop/tablet: horizontal expandable timeline */}
+            <div class="hidden sm:block">
+              <div class="overflow-x-auto pb-4 -mx-6 px-6 lg:-mx-8 lg:px-8 scrollbar-thin">
+                <div class="relative flex items-start gap-12 min-w-max py-3 px-1">
+                  <div class="absolute left-0 right-0 top-[31px] h-px bg-gradient-to-r from-thread-red via-terracotta/40 to-quiet-gray/15"></div>
+                  {items.map((item, i) => (
+                    <button
+                      type="button"
+                      class="leadership-dot relative z-10 flex flex-col items-center gap-2.5 group focus:outline-none"
+                      data-index={i}
+                      data-current={item.current ? "true" : "false"}
+                      aria-expanded={i === 0 ? "true" : "false"}
+                      aria-controls={`leadership-panel-${i}`}
+                    >
+                      <span class="text-[10px] font-semibold uppercase tracking-wider text-ink-muted/70 group-hover:text-thread-red transition-colors whitespace-nowrap">
+                        {item.period.replace(" – present", "").replace("Former appointment", "Earlier")}
+                      </span>
+                      <span
+                        class:list={[
+                          "dot-marker block rounded-full border-2 transition-all duration-200",
+                          item.current
+                            ? "w-3.5 h-3.5 bg-thread-red border-thread-red shadow-[0_0_0_4px_rgba(196,60,44,0.15)]"
+                            : "w-3 h-3 bg-canvas border-quiet-gray/40 group-hover:border-thread-red",
+                          i === 0 ? "is-active" : "",
+                        ]}
+                      ></span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Expanding detail stage */}
+              <div class="mt-2 bg-canvas-pure border border-quiet-gray/20 p-6 sm:p-8 min-h-[132px] relative overflow-hidden">
+                <span class="absolute top-0 left-0 bottom-0 w-1 bg-thread-red"></span>
+                {items.map((item, i) => (
+                  <div
+                    class:list={["leadership-panel", i === 0 ? "" : "hidden"]}
+                    data-index={i}
+                    id={`leadership-panel-${i}`}
+                  >
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-2.5">
+                      <span class="text-sm font-semibold text-thread-red">{item.period}</span>
+                      {item.current && (
+                        <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded-full">
+                          Ongoing
+                        </span>
+                      )}
+                      <span class="text-[10px] font-semibold uppercase tracking-wider text-ink-muted/60">
+                        &bull; {item.category}
+                      </span>
+                    </div>
+                    <p class="text-base text-ink font-light leading-relaxed max-w-2xl">
+                      {item.role}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <p class="mt-3 text-[11px] text-ink-muted/60 font-light">
+                Click any point on the timeline to see the full role.
+              </p>
             </div>
-            <p class="text-sm text-ink font-light leading-relaxed max-w-2xl group-hover:text-thread-crimson transition-colors">
-              {item.role}
-            </p>
-          </div>
-        ))}
-      </div>
+
+            {/* Mobile: plain stacked list */}
+            <div class="sm:hidden bg-canvas-pure border border-quiet-gray/20 divide-y divide-quiet-gray/15">
+              {items.map((item) => (
+                <div class="p-5">
+                  <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 mb-1.5">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-thread-red">{item.period}</span>
+                    {item.current && (
+                      <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded-full">
+                        Ongoing
+                      </span>
+                    )}
+                    <span class="text-[9px] font-semibold uppercase tracking-wider text-ink-muted/60">
+                      &bull; {item.category}
+                    </span>
+                  </div>
+                  <p class="text-sm text-ink font-light leading-relaxed">
+                    {item.role}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Fragment>
+        );
+      })()}
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll('[data-leadership-timeline]').forEach((root) => {
+      const dots = root.querySelectorAll('.leadership-dot');
+      const panels = root.querySelectorAll('.leadership-panel');
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = dot.getAttribute('data-index');
+          dots.forEach((d) => {
+            const marker = d.querySelector('.dot-marker');
+            const active = d === dot;
+            d.setAttribute('aria-expanded', active ? 'true' : 'false');
+            marker?.classList.toggle('is-active', active);
+          });
+          panels.forEach((p) => {
+            p.classList.toggle('hidden', p.getAttribute('data-index') !== idx);
+          });
+        });
+      });
+    });
+  </script>
 
   <!-- Directors -->
   <section id="directors" class="py-24 bg-canvas-pure border-y border-quiet-gray/20">

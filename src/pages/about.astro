@@ -243,35 +243,55 @@ const personSchema = {
       </p>
     </div>
 
-    <!-- Single Consolidated List -->
-    <div class="bg-canvas-pure border border-quiet-gray/20 divide-y divide-quiet-gray/15">
-      {[
-        { period: "2019 – present", role: "Executive Director, Water Integrity Network (WIN); Independent Consultant" },
-        { period: "2023 – present", role: "Steering Committee, End Water Poverty" },
-        { period: "2022 – present", role: "Steering Committee, Open Government Partnership" },
-        { period: "2022 – 2025", role: "Member, National Anti-Corruption Advisory Committee, South Africa" },
-        { period: "2019 – present", role: "Sanitation and Water for All — Chair, Finance & Governance Sub-Committee; member, Executive Oversight Committee & Steering Committee" },
-        { period: "2019 – present", role: "Steering Committee, OECD Water Governance Initiative" },
-        { period: "2019 – 2021", role: "Member, Committee of Experts to the Minister of Human Settlements, Water and Sanitation, South Africa" },
-        { period: "2015 – 2018", role: "Chairperson, Water Research Commission of South Africa" },
-        { period: "2013 – 2018", role: "Executive Director, Pegasys Institute" },
-        { period: "2007 – 2018", role: "Senior Consultant & Practice Director, Pegasys Strategy and Development" },
-        { period: "2002 – 2007", role: "Deputy Director-General: Policy & Regulation, South Africa Department of Water Affairs and Forestry" },
-        { period: "1998 – 2002", role: "Chief Director: Water Use & Conservation, South Africa Department of Water Affairs and Forestry" },
-        { period: "1995 – 1998", role: "Advisor to the Minister of Water Affairs and Forestry, South Africa" },
-        { period: "1995", role: "Head of Environmental Unit, Gauteng Provincial Government" },
-        { period: "Former appointment", role: "Board and advisory roles, International Water Management Institute (IWMI)" },
-        { period: "Former appointment", role: "Governance and advisory contribution, iSimangaliso World Heritage Park" },
-      ].map((item) => (
-        <div class="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 items-baseline">
-          <div class="sm:col-span-3 text-xs font-semibold uppercase tracking-wider text-thread-red">
-            {item.period}
+    <!-- Vertical Timeline -->
+    <div class="relative pl-8 sm:pl-12">
+      <div class="absolute left-[6px] sm:left-[10px] top-2 bottom-2 w-px bg-gradient-to-b from-thread-red via-terracotta/40 to-quiet-gray/15"></div>
+
+      <div class="space-y-9 sm:space-y-10">
+        {[
+          { period: "2019 – present", role: "Executive Director, Water Integrity Network (WIN); Independent Consultant", category: "Executive", current: true },
+          { period: "2023 – present", role: "Steering Committee, End Water Poverty", category: "Board & Advisory", current: true },
+          { period: "2022 – present", role: "Steering Committee, Open Government Partnership", category: "Board & Advisory", current: true },
+          { period: "2022 – 2025", role: "Member, National Anti-Corruption Advisory Committee, South Africa", category: "Board & Advisory", current: false },
+          { period: "2019 – present", role: "Sanitation and Water for All — Chair, Finance & Governance Sub-Committee; member, Executive Oversight Committee & Steering Committee", category: "Board & Advisory", current: true },
+          { period: "2019 – present", role: "Steering Committee, OECD Water Governance Initiative", category: "Board & Advisory", current: true },
+          { period: "2019 – 2021", role: "Member, Committee of Experts to the Minister of Human Settlements, Water and Sanitation, South Africa", category: "Board & Advisory", current: false },
+          { period: "2015 – 2018", role: "Chairperson, Water Research Commission of South Africa", category: "Board & Advisory", current: false },
+          { period: "2013 – 2018", role: "Executive Director, Pegasys Institute", category: "Executive", current: false },
+          { period: "2007 – 2018", role: "Senior Consultant & Practice Director, Pegasys Strategy and Development", category: "Executive", current: false },
+          { period: "2002 – 2007", role: "Deputy Director-General: Policy & Regulation, South Africa Department of Water Affairs and Forestry", category: "Government", current: false },
+          { period: "1998 – 2002", role: "Chief Director: Water Use & Conservation, South Africa Department of Water Affairs and Forestry", category: "Government", current: false },
+          { period: "1995 – 1998", role: "Advisor to the Minister of Water Affairs and Forestry, South Africa", category: "Government", current: false },
+          { period: "1995", role: "Head of Environmental Unit, Gauteng Provincial Government", category: "Government", current: false },
+          { period: "Former appointment", role: "Board and advisory roles, International Water Management Institute (IWMI)", category: "Board & Advisory", current: false },
+          { period: "Former appointment", role: "Governance and advisory contribution, iSimangaliso World Heritage Park", category: "Board & Advisory", current: false },
+        ].map((item) => (
+          <div class="relative group">
+            <span
+              class:list={[
+                "absolute -left-8 sm:-left-12 top-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-2 transition-all duration-200 group-hover:scale-125",
+                item.current
+                  ? "bg-thread-red border-thread-red shadow-[0_0_0_4px_rgba(196,60,44,0.12)]"
+                  : "bg-canvas border-quiet-gray/40 group-hover:border-thread-red",
+              ]}
+            ></span>
+            <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-thread-red">{item.period}</span>
+              {item.current && (
+                <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 rounded-full">
+                  Ongoing
+                </span>
+              )}
+              <span class="text-[9px] font-semibold uppercase tracking-wider text-ink-muted/60">
+                &bull; {item.category}
+              </span>
+            </div>
+            <p class="text-sm text-ink font-light leading-relaxed max-w-2xl group-hover:text-thread-crimson transition-colors">
+              {item.role}
+            </p>
           </div>
-          <div class="sm:col-span-9 text-sm text-ink-muted font-light leading-relaxed">
-            {item.role}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 

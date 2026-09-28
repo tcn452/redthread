@@ -1,5 +1,6 @@
 ---
 title: "Choosing poetry, choosing hope: asserting the voice of poetry and its transformative power in our lives"
+seoTitle: "Choosing Poetry, Choosing Hope"
 publishedDate: "2018-11-27"
 author: "Barbara Schreiner"
 category: "reflections"

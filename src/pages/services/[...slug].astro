@@ -35,7 +35,7 @@ const serviceSchema = {
 
 <BaseLayout
   title={`${service.data.title} | Red Thread NPC`}
-  description={service.data.shortDescription || `${service.data.title} at Red Thread NPC.`}
+  description={service.data.metaDescription || service.data.shortDescription || `${service.data.title} at Red Thread NPC.`}
   image={service.data.coverImage}
   jsonLd={serviceSchema}
 >

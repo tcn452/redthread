@@ -41,8 +41,8 @@ const articleSchema = {
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Red Thread NPC`}
-  description={post.data.excerpt}
+  title={`${post.data.seoTitle || post.data.title} | Red Thread NPC`}
+  description={post.data.metaDescription || post.data.excerpt}
   image={post.data.coverImage}
   type="article"
   jsonLd={articleSchema}

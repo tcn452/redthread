@@ -3,6 +3,7 @@ title: "Craftivism & Creative Practice"
 order: 2
 tagline: "Practice 02"
 shortDescription: "Rooted in Chilean arpillera traditions and South African storytelling: using cloth, needle, and creative writing as instruments of testimony, collective healing, and social change."
+metaDescription: "Rooted in Chilean arpillera and South African storytelling: cloth, needle, and writing as instruments of testimony and collective healing."
 coverImage: "/images/craft-heart-sculpture.webp"
 ---
 

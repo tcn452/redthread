@@ -4,6 +4,7 @@ publishedDate: "2024-09-15"
 author: "Barbara Schreiner"
 category: "governance"
 excerpt: "Water poverty is not only about scarcity or infrastructure. It is about who controls resources, whose voice is heard in decision-making, and whose needs are treated as optional."
+metaDescription: "Water poverty isn't only about scarcity or infrastructure — it's about who controls resources and whose needs get treated as optional."
 coverImage: "/images/water-governance.webp"
 readTime: "5 min read"
 ---
